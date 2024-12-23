@@ -1,6 +1,12 @@
+import DashboardContent from "./DashboardContent"
+import DashboardSidebar from "./DashboardSidebar"
+
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <section className="flex">
+      <DashboardSidebar />
+      <DashboardContent />
+    </section>
   )
 }
 
