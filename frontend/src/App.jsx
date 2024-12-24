@@ -27,7 +27,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ProtectedRoute from "./components/checkout/ProtectedRoute";
 import MyAccountPage from "./pages/MyAccountPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
-import AdminDashboard from "./pages/AdminDashboard";
+import DashboardLayout from "./layouts/DashboardLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -69,7 +69,9 @@ const router = createBrowserRouter(
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="admin/login" element={<AdminLoginPage />} />
-      <Route path="admin/dashboard" element={<AdminDashboard />} />
+      <Route path="admin/dashboard" element={<DashboardLayout />}>
+
+      </Route>
     </>
   )
 );
