@@ -31,6 +31,7 @@ import DashboardPage from "./pages/DashboardPage";
 import AdminCustomersPage from "./pages/AdminCustomersPage";
 import AdminOrdersPage from "./pages/AdminOrdersPage"
 import AdminOnlineStore from "./pages/AdminOnlineStore";
+import AdminCataloguePage from "./pages/AdminCataloguePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -75,6 +76,7 @@ const router = createBrowserRouter(
       <Route path="admin/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="overview" />} />
           <Route path="overview" element={<DashboardPage/>}/>
+          <Route path="catalogue" elemen={<AdminCataloguePage/>} />
           <Route path="customers" element={<AdminCustomersPage/>} />
           <Route path="orders" element={<AdminOrdersPage/>} />
           <Route path="online-store" element={<AdminOnlineStore/>}/>
