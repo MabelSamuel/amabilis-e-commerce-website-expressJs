@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       </div>
       <div className="w-4/5">
         <DashboardHeader />
-        <main>
+        <main className="bg-slate-100">
           <Outlet/>
         </main>
       </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -28,6 +27,10 @@ import ProtectedRoute from "./components/checkout/ProtectedRoute";
 import MyAccountPage from "./pages/MyAccountPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import DashboardLayout from "./layouts/DashboardLayout";
+import DashboardPage from "./pages/DashboardPage";
+import AdminCustomersPage from "./pages/AdminCustomersPage";
+import AdminOrdersPage from "./pages/AdminOrdersPage"
+import AdminOnlineStore from "./pages/AdminOnlineStore";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -70,7 +73,11 @@ const router = createBrowserRouter(
       </Route>
       <Route path="admin/login" element={<AdminLoginPage />} />
       <Route path="admin/dashboard" element={<DashboardLayout />}>
-
+          <Route index element={<Navigate to="overview" />} />
+          <Route path="overview" element={<DashboardPage/>}/>
+          <Route path="customers" element={<AdminCustomersPage/>} />
+          <Route path="orders" element={<AdminOrdersPage/>} />
+          <Route path="online-store" element={<AdminOnlineStore/>}/>
       </Route>
     </>
   )

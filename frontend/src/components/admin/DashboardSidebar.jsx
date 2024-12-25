@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Title from "../company-name/Title";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -14,15 +14,11 @@ import { MdStorefront } from "react-icons/md";
 
 const DashboardSidebar = () => {
   const menuItems = [
-    { label: "Dashboard", icon: <LuLayoutDashboard size="22" />, path: "" },
+    { label: "Dashboard", icon: <LuLayoutDashboard size="22" />, path: "overview" },
     {
       label: "Catalogue",
       icon: <GrCatalog size="22" />,
-      children: [
-        { label: "Product list", path: "" },
-        { label: "Add Product", path: "" },
-        { label: "Product details", path: "" },
-      ],
+      path: "catalogue",
     },
     {
       label: "Customers",
@@ -47,48 +43,31 @@ const DashboardSidebar = () => {
     },
   ];
 
-  const [openMenu, setOpenMenu] = useState(null);
   const navigate = useNavigate();
-
-  const toggleMenu = (index) => {
-    setOpenMenu(openMenu === index ? null : index);
+  const onLogout = () => {
+    navigate("/admin/login");
   };
-
-  const onLogout = () =>{
-    navigate("/admin/dashboard")
-  }
   return (
-    <div className="bg-lilac h-full px-7 py-4">
-      <Title />
-      <nav className="mt-8 text-white space-y-7">
+    <div className="bg-lilac h-full px-4 py-4">
+      <div className="text-center">
+        <Title />
+      </div>
+      <nav className="mt-6 text-white space-y-3 *:py-2 *:px-4">
         {menuItems.map((item, index) => (
-          <div key={index}>
-            {item.children ? (
-              <div
-                onClick={() => toggleMenu(index)}
-                className="flex space-x-4 items-center cursor-pointer"
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </div>
-            ) : (
-              <NavLink to={item.path} className="flex space-x-4 items-center">
-                {item.icon}
-                <span>{item.label}</span>
-              </NavLink>
-            )}
-            {item.children && openMenu === index && (
-              <div className="ml-8 mt-2 space-y-2">
-                {item.children.map((child, childIndex) => (
-                  <NavLink key={childIndex} to={child.path} className="block">
-                    - {child.label}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
+          <NavLink
+            key={index}
+            to={item.path}
+            className={({ isActive }) =>
+              `flex space-x-4 items-center ${
+                isActive ? "border-white bg-white text-black rounded-md" : ""
+              }`
+            }
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </NavLink>
         ))}
-        <button onClick={onLogout} className="flex space-x-4 items-center ">
+        <button onClick={onLogout} className="flex space-x-4 items-center bg-red-500 rounded-md w-full ">
           <IoLogOutOutline size="22" /> <span>Logout</span>
         </button>
       </nav>
