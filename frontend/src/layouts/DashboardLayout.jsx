@@ -5,7 +5,7 @@ import DashboardSidebar from "../components/admin/DashboardSidebar";
 const DashboardLayout = () => {
   return (
     <section className="flex">
-      <div className="w-1/5 h-screen">
+      <div className="w-1/5 h-screen sticky top-0">
         <DashboardSidebar />
       </div>
       <div className="w-4/5">

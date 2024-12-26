@@ -10,7 +10,7 @@ const DashboardHeader = () => {
     setIsOpen((prev) => (prev === dropdownName ? null : dropdownName));
   };
   return (
-    <div className="flex items-center justify-between h-16 py-6 px-6 border-b shadow-sm sticky top-0 z-[51]">
+    <div className="flex items-center justify-between bg-white h-16 py-6 px-6 border-b shadow-sm sticky top-0 z-[51]">
       <div className="">
         <GiHamburgerMenu className="hidden md:block sm:block" size={20} />
       </div>
