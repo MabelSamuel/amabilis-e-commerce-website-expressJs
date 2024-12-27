@@ -25,13 +25,13 @@ function Login() {
 
   const onSubmit = async (data) => {
     const { username, password, rememberMe } = data;
-    const user = {
+    const userData = {
       username,
       password,
       rememberMe
     }
     try {
-      const response = await axios.post("http://localhost:7000/api/users/login", user);
+      const response = await axios.post("http://localhost:7000/api/users/login", userData);
       const { token, user } = response.data;
       
       if (rememberMe) {
