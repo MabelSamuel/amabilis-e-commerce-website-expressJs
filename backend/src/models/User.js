@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     username: {
@@ -20,7 +20,12 @@ const UserSchema = new Schema({
     rememberMe: {
         type: Boolean,
         required: false
+    },
+    cart: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cart'
     }
 }, { timestamps: true })
 
-export default mongoose.model('User', UserSchema)
+const User = mongoose.model('User', UserSchema)
+export default User

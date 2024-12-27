@@ -8,10 +8,11 @@ import { loginValidations } from "../../validations/loginValidations";
 import { useAuth } from "../../context/AuthContext";
 import { GrStatusGood } from "react-icons/gr";
 import { TiCancel } from "react-icons/ti";
+import axios from "axios";
 
 function Login() {
   const navigate = useNavigate();
-  const { login, setIsLoggedIn } = useAuth();
+  const { login, setIsLoggedIn, setMessage, setError, setUser } = useAuth();
 
   const {
     register,
@@ -22,12 +23,32 @@ function Login() {
     resolver: zodResolver(loginValidations),
   });
 
-  const [error, setError] = useState(null);
-  const [loginMessage, setLoginMessage] = useState(null);
-
   const onSubmit = async (data) => {
     const { username, password, rememberMe } = data;
+    const user = {
+      username,
+      password,
+      rememberMe
+    }
+    try {
+      const response = await axios.post("http://localhost:7000/api/users/login", user);
+      const { token, user } = response.data;
+      
+      if (rememberMe) {
+        localStorage.setItem("authToken", token)
+      } else {
+        sessionStorage.setItem("authToken", token)
+      }
       setIsLoggedIn(true);
+      setUser(user);
+      setMessage("Login successful");
+      setTimeout(()=> setMessage(""), 3000)
+      navigate("/checkout"); 
+    } catch (error) {
+      setError(error.response.data.message);
+      console.log("Error login in", error);  
+    }
+      
 
     // Clear the form fields
     reset({
