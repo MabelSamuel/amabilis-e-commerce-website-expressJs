@@ -16,6 +16,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    rememberMe: {
+        type: Boolean,
+        required: false
     }
 }, { timestamps: true })
 

@@ -14,7 +14,7 @@ export const RegisterUser = async(req, res) =>{
 }
 
 export const LoginUser = async(req, res) =>{
-    const { username, password } = req.body;
+    const { username, password, rememberMe } = req.body;
     try {
         const user = await User.findOne({ username });
         if (!user){
@@ -24,7 +24,7 @@ export const LoginUser = async(req, res) =>{
         if (!isMatch) {
             res.status(400).json({ message: "Invalid Credentials" })
         }
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" })
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: rememberMe ? "30d" : "1h" })
         res.json({ token });
     } catch (error) {
         res.status(500).json({ error: error.message })
