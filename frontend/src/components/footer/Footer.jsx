@@ -1,8 +1,9 @@
 import React from "react";
-import Title from "../company-name/Title";
-import { v4 } from "uuid";
-import BackToTopButton from "../scroll-to-top-button/BackToTopButton";
 import { Link } from "react-router-dom";
+import { v4 } from "uuid";
+
+import Title from "../company-name/Title";
+import BackToTopButton from "../scroll-to-top-button/BackToTopButton";
 
 function Footer() {
   const section = [

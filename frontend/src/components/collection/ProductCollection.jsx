@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductCollectionTopBar from './ProductCollectionTopBar';
-
 import { Outlet } from 'react-router-dom';
+
+import ProductCollectionTopBar from './ProductCollectionTopBar';
 
 function ProductCollection({ handleSortOrder, filteredProducts, filteredProductsLength }) {
   

@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
-import { AddToCartContext } from "../context/AddToCartContext";
+
 import { GrStatusGood } from "react-icons/gr";
 import { TiCancel } from 'react-icons/ti';
+
+import { AddToCartContext } from "../context/AddToCartContext";
 import { WishListContext } from "../context/WishListContext";
-import { ScrollToTop } from "../components/scroll-to-top/ScrollToTop";
 import { useAuth } from "../context/AuthContext";
+
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
+
+import { ScrollToTop } from "../components/scroll-to-top/ScrollToTop";
+
 
 function Root() {
   const { cartMessage } = useContext(AddToCartContext);

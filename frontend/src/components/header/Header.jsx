@@ -1,6 +1,7 @@
-import React from 'react'
-import PreHeader from './PreHeader'
-import NavBar from './NavBar'
+import React from 'react';
+
+import PreHeader from './PreHeader';
+import NavBar from './NavBar';
 
 function Header() {
   return (

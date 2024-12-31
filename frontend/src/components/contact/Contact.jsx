@@ -8,10 +8,10 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { TiSocialPinterest } from "react-icons/ti";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { GrStatusGood } from 'react-icons/gr';
 // form validations
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactValidations } from "../../validations/contactValidations";
-import { GrStatusGood } from 'react-icons/gr';
 
 function Contact() {
     const {

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
+
 import { useProducts } from "../../hooks/useProducts";
 import { shortenLengthOfTitleInHomePage } from "../../utility/shortenLengthOfTitle";
 import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
@@ -10,6 +11,7 @@ import { GrFormView } from "react-icons/gr";
 import { CiHeart } from "react-icons/ci";
 import { AddToCartContext } from "../../context/AddToCartContext";
 import { WishListContext } from "../../context/WishListContext";
+
 import ProductModal from "../collection/ProductModal";
 
 const SearchResult = () => {

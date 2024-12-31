@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Title from "../company-name/Title";
 import { NavLink } from "react-router-dom";
-import Icons from "./Icons";
 import { v4 } from "uuid";
+
+import Title from "../company-name/Title";
+import Icons from "./Icons";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 

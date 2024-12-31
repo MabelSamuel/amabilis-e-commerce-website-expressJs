@@ -1,6 +1,7 @@
 import React from "react";
-import { MdOutlineClear } from "react-icons/md";
 import { Link } from "react-router-dom";
+
+import { MdOutlineClear } from "react-icons/md";
 
 function SideBar({ handleCategoryChange, handleSearchInput, maxPrice, handleMaxPriceFilter, handleSearchClear, search }) {
   return (

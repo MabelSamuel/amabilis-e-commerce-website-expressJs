@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import { AddToCartContext } from "../../context/AddToCartContext";
 import { Link, useNavigate } from "react-router-dom";
+
+import { AddToCartContext } from "../../context/AddToCartContext";
 // hooks
 import { useProducts } from "../../hooks/useProducts";
 // icons
 import { MdOutlineCancel } from "react-icons/md";
 import { RiShoppingBag2Line } from "react-icons/ri";
+// components
 import CartTotal from "./CartTotal";
 import CartCoupon from "./CartCoupon";
 import CartTax from "./CartTax";

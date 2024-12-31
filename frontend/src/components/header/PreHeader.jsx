@@ -1,5 +1,6 @@
-import React from 'react'
-import Dropdown from './Dropdown'
+import React from 'react';
+
+import Dropdown from './Dropdown';
 
 function PreHeader() {
   return (

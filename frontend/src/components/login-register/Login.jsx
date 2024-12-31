@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import Input from "./Input";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "./Button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import { loginValidations } from "../../validations/loginValidations";
 import { useAuth } from "../../context/AuthContext";
+
 import { GrStatusGood } from "react-icons/gr";
 import { TiCancel } from "react-icons/ti";
+
 import axios from "axios";
+
+import Button from "./Button";
+import Input from "./Input";
 
 function Login() {
   const navigate = useNavigate();

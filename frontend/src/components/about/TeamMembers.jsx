@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // images
 import manager from "../../assets/manager.jpg";
 import developer from "../../assets/developer.jpg";

@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import SideBar from './SideBar'
-import ProductCollection from './ProductCollection'
+import React, { useEffect, useState } from 'react';
+
+import SideBar from './SideBar';
+import ProductCollection from './ProductCollection';
+
 import { useProducts } from '../../hooks/useProducts';
 import useDebounce from '../../hooks/useDebounce';
 

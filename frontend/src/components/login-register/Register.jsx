@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import axios from "axios";
+
+import { registerValidations } from '../../validations/registerValidations';
+
+import { useAuth } from '../../context/AuthContext';
+
 import Input from './Input';
 import Button from './Button';
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { registerValidations } from '../../validations/registerValidations';
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useAuth } from '../../context/AuthContext';
 
 function Register() {
     const navigate = useNavigate();

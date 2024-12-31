@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useProducts } from "../../hooks/useProducts";
+
 import { IoStarSharp } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
-import { AddToCartContext } from "../../context/AddToCartContext";
-import { WishListContext } from "../../context/WishListContext";
 import { TiSocialFacebook, TiSocialPinterest } from "react-icons/ti";
 import { FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import { shortenLengthOfTitleInHomePage } from "../../utility/shortenLengthOfTitle";
-import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { GrFormView } from "react-icons/gr";
+
+import { useProducts } from "../../hooks/useProducts";
+import { AddToCartContext } from "../../context/AddToCartContext";
+import { WishListContext } from "../../context/WishListContext";
+import { shortenLengthOfTitleInHomePage } from "../../utility/shortenLengthOfTitle";
+import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
+
 import ProductModal from "../collection/ProductModal";
 import { useProductModal } from "../../hooks/useProductModal";
 

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
-import { useProducts } from "../../hooks/useProducts";
-import { IoStarSharp } from "react-icons/io5";
-import { AddToCartContext } from "../../context/AddToCartContext";
 import { useOutletContext } from "react-router-dom";
+
+import { useProducts } from "../../hooks/useProducts";
+import { AddToCartContext } from "../../context/AddToCartContext";
+
+import { IoStarSharp } from "react-icons/io5";
 
 function ProductList() {
   const filteredProducts = useOutletContext();

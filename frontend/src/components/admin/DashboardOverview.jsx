@@ -1,14 +1,16 @@
 import React from "react";
+
 import DashboardTitle from "./DashboardTitle";
-import { LuPackage } from "react-icons/lu";
 import OverviewCard from "./OverviewCard";
+import OverviewRectangleCard from "./OverviewRectangleCard";
+import Table from "../table/Table";
+
+import { LuPackage } from "react-icons/lu";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { IoCardOutline } from "react-icons/io5";
-import OverviewRectangleCard from "./OverviewRectangleCard";
 import { BsTruck } from "react-icons/bs";
 import { GrStatusGood } from "react-icons/gr";
 import { FaRotate } from "react-icons/fa6";
-import Table from "../table/Table";
 
 const DashboardOverview = () => {
   const cardItems = [

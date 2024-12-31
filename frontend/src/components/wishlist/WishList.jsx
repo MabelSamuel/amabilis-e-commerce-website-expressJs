@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { WishListContext } from "../../context/WishListContext";
 import { Link } from "react-router-dom";
+
+import { WishListContext } from "../../context/WishListContext";
+
 import { CiHeart } from "react-icons/ci";
 
 function WishList() {

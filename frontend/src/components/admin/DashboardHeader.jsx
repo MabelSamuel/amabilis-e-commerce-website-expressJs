@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegBell } from "react-icons/fa";
-import { useState } from "react";
 import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
 
 const DashboardHeader = () => {

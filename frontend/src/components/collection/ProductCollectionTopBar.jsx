@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { LuLayoutGrid } from "react-icons/lu";
 import { IoList } from "react-icons/io5";
-import { NavLink } from 'react-router-dom';
 
 function ProductCollectionTopBar({ handleSortOrder, filteredProductsLength }) {
   return (

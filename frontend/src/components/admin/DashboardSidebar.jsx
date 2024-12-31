@@ -1,7 +1,8 @@
-import { useState } from "react";
-import Title from "../company-name/Title";
-import { LuLayoutDashboard } from "react-icons/lu";
 import { NavLink, useNavigate } from "react-router-dom";
+
+import Title from "../company-name/Title";
+
+import { LuLayoutDashboard } from "react-icons/lu";
 import { GrCatalog } from "react-icons/gr";
 import {
   IoPeopleOutline,

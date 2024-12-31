@@ -1,6 +1,7 @@
 import React from "react";
-import { useState, useContext } from "react";
-// custom hook
+import { useContext } from "react";
+import { Link, useOutletContext } from "react-router-dom";
+// custom hooks
 import { useProducts } from "../../hooks/useProducts";
 import { useProductModal } from "../../hooks/useProductModal";
 // react icons
@@ -15,7 +16,6 @@ import { shortenLengthOfTitle } from "../../utility/shortenLengthOfTitle";
 import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
 // components
 import ProductModal from "./ProductModal";
-import { Link, useOutletContext } from "react-router-dom";
 
 function ProductGrid() {
   const filteredProducts = useOutletContext();

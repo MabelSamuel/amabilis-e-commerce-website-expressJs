@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+
 import BillingDetails from './BillingDetails';
 import Order from './Order';
+
 import { AddToCartContext } from '../../context/AddToCartContext';
 
 function CheckOut() {
