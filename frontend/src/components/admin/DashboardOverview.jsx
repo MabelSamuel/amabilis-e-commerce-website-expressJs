@@ -48,29 +48,29 @@ const DashboardOverview = () => {
 
   const rectangleItems = [
     {
-      bgColor: "red-200",
-      textColor: "red-500",
+      bgColor: "bg-red-200",
+      textColor: "text-red-500",
       icon: <HiOutlineShoppingCart size={20} />,
       title: "Total Order",
       count: 518,
     },
     {
-      bgColor: "pink-200",
-      textColor: "red-400",
+      bgColor: "bg-pink-200",
+      textColor: "text-red-400",
       icon: <FaRotate size={20} />,
       title: "Orders Pending",
       count: 108,
     },
     {
-      bgColor: "emerald-200",
-      textColor: "emerald-500",
+      bgColor: "bg-emerald-200",
+      textColor: "text-emerald-500",
       icon: <BsTruck size={20} />,
       title: "Orders Processing",
       count: 518,
     },
     {
-      bgColor: "emerald-200",
-      textColor: "emerald-500",
+      bgColor: "bg-emerald-200",
+      textColor: "text-emerald-500",
       icon: <GrStatusGood size={20} />,
       title: "Orders Delivered",
       count: 490,
@@ -79,9 +79,9 @@ const DashboardOverview = () => {
 
   const columns = [
     { header: 'Order ID', accessor: 'id' },
-    { header: 'Order Date', accessor: 'order-date' },
-    { header: 'Customer Name', accessor: 'customer-name' },
-    { header: 'Order Cost', accessor: 'order-cost' },
+    { header: 'Order Date', accessor: 'orderDate' },
+    { header: 'Customer Name', accessor: 'customerName' },
+    { header: 'Order Cost', accessor: 'orderCost' },
     { header: 'Status', accessor: 'status' },
     { header: 'Email', accessor: 'email' },
     { 
@@ -123,7 +123,7 @@ const DashboardOverview = () => {
   return (
     <div className="space-y-10">
       <DashboardTitle title="Dashboard Overview" />
-      <div className="flex justify-between overflow-x-auto">
+      <div className="flex space-x-4 overflow-x-auto">
         {cardItems.map((item, index) => (
           <OverviewCard
             key={index}
@@ -134,7 +134,7 @@ const DashboardOverview = () => {
           />
         ))}
       </div>
-      <div className="flex justify-between overflow-x-auto">
+      <div className="flex space-x-4 overflow-x-auto">
         { rectangleItems.map((item, index)=> (
           <OverviewRectangleCard 
           key={index}
@@ -146,7 +146,7 @@ const DashboardOverview = () => {
           />
         )) }
       </div>
-      <div>
+      <div className="space-y-4">
         <h4 className="font-medium text-lg">Recent order</h4>
         <div className="overflow-x-auto">
           <Table columns={columns} data={data}/>

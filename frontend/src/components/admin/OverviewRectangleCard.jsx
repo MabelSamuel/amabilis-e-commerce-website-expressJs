@@ -2,8 +2,8 @@ import React from "react";
 
 const OverviewRectangleCard = ({ key,icon, title, count, bgColor, textColor  }) => {
   return (
-    <div key={key} className="bg-white w-64 rounded-md pl-7 flex items-center h-24 space-x-4">
-      <div className={`size-12 rounded-full flex justify-center items-center bg-${bgColor} text-${textColor}`}>
+    <div key={key} className="bg-white w-1/4 rounded-md pl-7 flex items-center h-24 space-x-4">
+      <div className={`size-12 rounded-full flex justify-center items-center ${bgColor} ${textColor}`}>
         {icon}
       </div>
       <div>

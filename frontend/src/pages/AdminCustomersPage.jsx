@@ -1,6 +1,10 @@
+import Customers from "../components/admin/Customers"
+
 const AdminCustomersPage = () => {
   return (
-    <div>AdminCustomersPage</div>
+    <>
+      <Customers/>
+    </>
   )
 }
 
