@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import DashboardTitle from "./DashboardTitle";
-import { LuUpload } from "react-icons/lu";
+
 import { MdOutlineClear } from "react-icons/md";
-import Button from "./Button";
+
+import DashboardTitle from "./ui/DashboardTitle";
+import Button from "./ui/Button";
+import ExportFilterLayoutCard from "./ui/ExportFilterLayoutCard";
+import ExportButton from "./ui/ExportButton";
 
 const Customers = () => {
   const [isVisible, setIsVisble] = useState(false);
@@ -15,13 +18,11 @@ const Customers = () => {
   };
 
   return (
-    <div className="space-y-10">
+    <section className="space-y-6">
       <DashboardTitle title="Customers" />
-      <div className="bg-white rounded-md px-4 h-24 flex items-center">
-        <button className="border rounded-md text-sm flex space-x-2 items-center h-10 px-2 hover:border-lilac hover:text-lilac">
-          <LuUpload /> <span>Export to CV</span>
-        </button>
-      </div>
+      <ExportFilterLayoutCard>
+        <ExportButton/>
+      </ExportFilterLayoutCard>
       <form className="bg-white rounded-md px-4 h-24 flex items-center space-x-8">
         <div className="w-1/2 relative">
           <input
@@ -41,7 +42,7 @@ const Customers = () => {
           <Button bgColor="bg-slate-300" text="Reset"/>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

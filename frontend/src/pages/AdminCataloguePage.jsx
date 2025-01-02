@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Catalogue from '../components/admin/Catalogue';
 
 const AdminCataloguePage = () => {
   return (
-    <div>AdminCataloguePage</div>
+    <>
+      <Catalogue />
+    </>
   )
 }
 

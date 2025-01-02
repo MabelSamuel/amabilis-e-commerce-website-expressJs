@@ -1,8 +1,8 @@
 import React from "react";
 
-import DashboardTitle from "./DashboardTitle";
-import OverviewCard from "./OverviewCard";
-import OverviewRectangleCard from "./OverviewRectangleCard";
+import DashboardTitle from "./ui/DashboardTitle";
+import OverviewCard from "./ui/OverviewCard";
+import OverviewRectangleCard from "./ui/OverviewRectangleCard";
 import Table from "../table/Table";
 
 import { LuPackage } from "react-icons/lu";

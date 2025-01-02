@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 // layout
 import Root from "./layouts/Root";
+import DashboardLayout from "./layouts/DashboardLayout";
 // pages
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
@@ -26,7 +27,6 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ProtectedRoute from "./components/checkout/ProtectedRoute";
 import MyAccountPage from "./pages/MyAccountPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
-import DashboardLayout from "./layouts/DashboardLayout";
 import DashboardPage from "./pages/DashboardPage";
 import AdminCustomersPage from "./pages/AdminCustomersPage";
 import AdminOrdersPage from "./pages/AdminOrdersPage"
@@ -76,7 +76,7 @@ const router = createBrowserRouter(
       <Route path="admin/dashboard" element={<DashboardLayout />}>
           <Route index element={<Navigate to="overview" />} />
           <Route path="overview" element={<DashboardPage/>}/>
-          <Route path="catalogue" elemen={<AdminCataloguePage/>} />
+          <Route path="catalogue" element={<AdminCataloguePage/>} />
           <Route path="customers" element={<AdminCustomersPage/>} />
           <Route path="orders" element={<AdminOrdersPage/>} />
           <Route path="online-store" element={<AdminOnlineStore/>}/>

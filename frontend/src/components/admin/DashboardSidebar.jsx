@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { v4 } from "uuid"
 
 import Title from "../company-name/Title";
 
@@ -54,9 +55,9 @@ const DashboardSidebar = () => {
         <Title />
       </div>
       <nav className="mt-6 text-white space-y-3 *:py-2 *:px-4">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <NavLink
-            key={index}
+            key={v4()}
             to={item.path}
             className={({ isActive }) =>
               `flex space-x-4 items-center ${
