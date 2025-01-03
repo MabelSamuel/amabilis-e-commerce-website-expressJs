@@ -6,6 +6,7 @@ import DashboardTitle from "./ui/DashboardTitle";
 import Button from "./ui/Button";
 import ExportFilterLayoutCard from "./ui/ExportFilterLayoutCard";
 import ExportButton from "./ui/ExportButton";
+import Input from "./ui/Input";
 
 const Customers = () => {
   const [isVisible, setIsVisble] = useState(false);
@@ -21,14 +22,12 @@ const Customers = () => {
     <section className="space-y-6">
       <DashboardTitle title="Customers" />
       <ExportFilterLayoutCard>
-        <ExportButton/>
+        <ExportButton />
       </ExportFilterLayoutCard>
       <form className="bg-white rounded-md px-4 h-24 flex items-center space-x-8">
         <div className="w-1/2 relative">
-          <input
-            type="text"
+          <Input
             placeholder="Search by name/email"
-            className="w-full h-10 border rounded-md px-4 outline-none"
             onChange={handleVisibility}
           />
           {isVisible && (
@@ -38,8 +37,8 @@ const Customers = () => {
           )}
         </div>
         <div className="w-1/2 flex gap-x-4">
-          <Button bgColor="bg-lilac" text="Filter" className="text-white"/>
-          <Button bgColor="bg-slate-300" text="Reset"/>
+          <Button bgColor="bg-lilac" text="Filter" className="text-white" />
+          <Button bgColor="bg-slate-300" text="Reset" />
         </div>
       </form>
     </section>
