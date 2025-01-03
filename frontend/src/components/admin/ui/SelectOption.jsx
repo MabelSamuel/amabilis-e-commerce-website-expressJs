@@ -1,12 +1,14 @@
 import React from "react";
 
-const SelectOption = ({ options }) => {
+const SelectOption = ({ options, name, className }) => {
   return (
     <select
-      name=""
-      className="basis-1/4 h-10 border border-slate-300 rounded-md px-4 outline-none bg-slate-200"
+      name={name}
+      className={` h-10 border border-slate-300 rounded-md px-4 outline-none bg-slate-200 ${className}`}
     >
-      <option value="">Category</option>
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>{option.label}</option>
+      ))}
     </select>
   );
 };
