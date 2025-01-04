@@ -9,6 +9,8 @@ import SelectOption from "./ui/SelectOption";
 
 import { GoPlus } from "react-icons/go";
 
+import { useDashboardModal } from "../../hooks/useDashboardModal";
+
 const Catalogue = () => {
   const crochetClothingCategories = [
     { value: "", label: "Category" },
@@ -35,6 +37,8 @@ const Catalogue = () => {
     { value: "highToLow", label: "High to Low" },
   ];
 
+  const { isProductModal, handleProductModal, closeProductModal } = useDashboardModal();
+  
   return (
     <section className="space-y-6">
       <DashboardTitle title="Catalogue" />
