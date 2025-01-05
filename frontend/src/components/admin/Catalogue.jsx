@@ -9,6 +9,8 @@ import SelectOption from "./ui/SelectOption";
 
 import { GoPlus } from "react-icons/go";
 
+import AddProductModal from "./AddProductModal";
+
 import { useDashboardModal } from "../../hooks/useDashboardModal";
 
 const Catalogue = () => {
@@ -37,8 +39,9 @@ const Catalogue = () => {
     { value: "highToLow", label: "High to Low" },
   ];
 
-  const { isProductModal, handleProductModal, closeProductModal } = useDashboardModal();
-  
+  const { isProductModal, handleProductModal, closeProductModal } =
+    useDashboardModal();
+
   return (
     <section className="space-y-6">
       <DashboardTitle title="Catalogue" />
@@ -47,6 +50,7 @@ const Catalogue = () => {
         <Button
           bgColor="bg-green-500"
           className=" w-auto text-white px-3 flex items-center space-x-2"
+          onClick={handleProductModal}
         >
           <GoPlus />
           <p>Add product</p>
@@ -72,6 +76,9 @@ const Catalogue = () => {
           <Button bgColor="bg-slate-300" text="Reset" />
         </div>
       </form>
+      {isProductModal && (
+        <AddProductModal closeProductModal={closeProductModal} />
+      )}
     </section>
   );
 };

@@ -12,6 +12,8 @@ import { BsTruck } from "react-icons/bs";
 import { GrStatusGood } from "react-icons/gr";
 import { FaRotate } from "react-icons/fa6";
 
+import { columns, data } from "../../data/dashboard-overview"
+
 const DashboardOverview = () => {
   const cardItems = [
     {
@@ -76,49 +78,6 @@ const DashboardOverview = () => {
       count: 490,
     },
   ];
-
-  const columns = [
-    { header: 'Order ID', accessor: 'id' },
-    { header: 'Order Date', accessor: 'orderDate' },
-    { header: 'Customer Name', accessor: 'customerName' },
-    { header: 'Order Cost', accessor: 'orderCost' },
-    { header: 'Status', accessor: 'status' },
-    { header: 'Email', accessor: 'email' },
-    { 
-      header: 'Actions', 
-      accessor: 'id', 
-      render: (id) => <select className="">
-        <option value="pending">Pending</option>
-        <option value="delivered">Delivered</option>
-        <option value="processing">Processing</option>
-        <option value="cancel">Cancel</option>
-      </select> 
-    },
-  ];
-
-  const data = [
-    { id: 101, orderDate: '2024-01-01', customerName: 'Alice Johnson', orderCost: '$150.00', status: 'Pending', email: 'alice.johnson@example.com' },
-    { id: 102, orderDate: '2024-01-02', customerName: 'Bob Smith', orderCost: '$200.00', status: 'Delivered', email: 'bob.smith@example.com' },
-    { id: 103, orderDate: '2024-01-03', customerName: 'Charlie Brown', orderCost: '$75.00', status: 'Processing', email: 'charlie.brown@example.com' },
-    { id: 104, orderDate: '2024-01-04', customerName: 'Diana Prince', orderCost: '$300.00', status: 'Delivered', email: 'diana.prince@example.com' },
-    { id: 105, orderDate: '2024-01-05', customerName: 'Ethan Hunt', orderCost: '$500.00', status: 'Canceled', email: 'ethan.hunt@example.com' },
-    { id: 106, orderDate: '2024-01-06', customerName: 'Fiona Gallagher', orderCost: '$220.00', status: 'Pending', email: 'fiona.g@example.com' },
-    { id: 107, orderDate: '2024-01-07', customerName: 'George Michaels', orderCost: '$180.00', status: 'Processing', email: 'george.m@example.com' },
-    { id: 108, orderDate: '2024-01-08', customerName: 'Hannah Montana', orderCost: '$450.00', status: 'Delivered', email: 'hannah.m@example.com' },
-    { id: 109, orderDate: '2024-01-09', customerName: 'Ian Somerhalder', orderCost: '$95.00', status: 'Pending', email: 'ian.s@example.com' },
-    { id: 110, orderDate: '2024-01-10', customerName: 'Jack Sparrow', orderCost: '$350.00', status: 'Delivered', email: 'jack.s@example.com' },
-    { id: 111, orderDate: '2024-01-11', customerName: 'Karen Daniels', orderCost: '$250.00', status: 'Canceled', email: 'karen.d@example.com' },
-    { id: 112, orderDate: '2024-01-12', customerName: 'Liam Neeson', orderCost: '$400.00', status: 'Delivered', email: 'liam.n@example.com' },
-    { id: 113, orderDate: '2024-01-13', customerName: 'Megan Fox', orderCost: '$130.00', status: 'Processing', email: 'megan.f@example.com' },
-    { id: 114, orderDate: '2024-01-14', customerName: 'Nathan Drake', orderCost: '$600.00', status: 'Pending', email: 'nathan.d@example.com' },
-    { id: 115, orderDate: '2024-01-15', customerName: 'Olivia Pope', orderCost: '$280.00', status: 'Delivered', email: 'olivia.p@example.com' },
-    { id: 116, orderDate: '2024-01-16', customerName: 'Peter Parker', orderCost: '$120.00', status: 'Processing', email: 'peter.p@example.com' },
-    { id: 117, orderDate: '2024-01-17', customerName: 'Quinn Fabray', orderCost: '$75.00', status: 'Pending', email: 'quinn.f@example.com' },
-    { id: 118, orderDate: '2024-01-18', customerName: 'Rachel Green', orderCost: '$500.00', status: 'Delivered', email: 'rachel.g@example.com' },
-    { id: 119, orderDate: '2024-01-19', customerName: 'Steve Rogers', orderCost: '$290.00', status: 'Canceled', email: 'steve.r@example.com' },
-    { id: 120, orderDate: '2024-01-20', customerName: 'Tony Stark', orderCost: '$1,000.00', status: 'Delivered', email: 'tony.s@example.com' },
-  ];
-  
 
   return (
     <div className="space-y-10">
