@@ -4,7 +4,7 @@ export const useDashboardModal = () =>{
     const [isShowDashboardModal, setIsShowDashboardModal] = useState(false);
 
     const handleDashboardModal = () => {
-        setIsShowDashboardModal((prev) => !prev );
+        setIsShowDashboardModal(true);
     };
 
     const closeDashboardModal = () =>{

@@ -39,7 +39,7 @@ const Catalogue = () => {
     { value: "highToLow", label: "High to Low" },
   ];
 
-  const { isProductModal, handleProductModal, closeProductModal } =
+  const { isShowDashboardModal, handleDashboardModal, closeDashboardModal } =
     useDashboardModal();
 
   return (
@@ -50,7 +50,7 @@ const Catalogue = () => {
         <Button
           bgColor="bg-green-500"
           className=" w-auto text-white px-3 flex items-center space-x-2"
-          onClick={handleProductModal}
+          onClick={handleDashboardModal}
         >
           <GoPlus />
           <p>Add product</p>
@@ -76,8 +76,8 @@ const Catalogue = () => {
           <Button bgColor="bg-slate-300" text="Reset" />
         </div>
       </form>
-      {isProductModal && (
-        <AddProductModal closeProductModal={closeProductModal} />
+      {isShowDashboardModal && (
+        <AddProductModal closeDashboardModal={closeDashboardModal} />
       )}
     </section>
   );
