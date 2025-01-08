@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegBell } from "react-icons/fa";
 import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
 
-const DashboardHeader = () => {
+const DashboardHeader = ({ toggleSidebarVisibility }) => {
   const [isOpen, setIsOpen] = useState(null);
 
   const handleDropdown = (dropdownName) => {
@@ -13,7 +13,7 @@ const DashboardHeader = () => {
   return (
     <div className="flex items-center justify-between bg-white h-16 py-6 px-6 border-b shadow-sm sticky top-0 z-[51]">
       <div className="">
-        <GiHamburgerMenu className="hidden md:block sm:block" size={20} />
+        <GiHamburgerMenu className="hidden md:block sm:block" size={20} onClick={toggleSidebarVisibility} />
       </div>
       <ul className="flex items-center space-x-6 cursor-pointer">
         <li>

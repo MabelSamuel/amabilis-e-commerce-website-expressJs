@@ -50,7 +50,7 @@ const DashboardSidebar = () => {
     navigate("/admin/login");
   };
   return (
-    <div className="bg-lilac h-full px-4 py-4">
+    <div className="bg-lilac h-full px-4 py-4 md:w-2/5">
       <div className="text-center">
         <Title />
       </div>
