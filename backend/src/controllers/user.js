@@ -34,7 +34,7 @@ export const LoginUser = async (req, res) => {
   try {
     const { username, password, rememberMe } = loginUserSchema.parse(req.body);
 
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username }).select('+password');
     if (!user) {
       res.status(401).json({ message: "User does not exist" });
     }
