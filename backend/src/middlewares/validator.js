@@ -29,3 +29,9 @@ export const registerUserSchema = z.object({
       "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, and one number."
     ),
 });
+
+export const loginUserSchema = z.object({
+  username: z.string().min(3, "Username is required."),
+  password: z.string().min(8, "Password is required."),
+  rememberMe: z.boolean().optional(),
+});
