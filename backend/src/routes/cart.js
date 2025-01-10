@@ -1,5 +1,5 @@
 import express from 'express';
-import { authMiddleware } from '../middleware/auth';
+import { authMiddleware } from '../middlewares/auth.js';
 import { syncCart } from '../controllers/cart.js'
 
 const router = express.Router();
