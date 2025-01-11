@@ -13,7 +13,7 @@ const DashboardLayout = () => {
 
   return (
     <section className="flex">
-      <div className={`w-[18%] h-screen sticky top-0 md:hidden sm:hidden ${ isSidebarVisible ? 'translate-x-full block transition-transform duration-300' : '-translate-x-full' }`}>
+      <div className={`w-[18%] h-screen sticky top-0 md:hidden sm:hidden ${ isSidebarVisible ? 'translate-x-full block transition-transform duration-300' : '' }`}>
         <DashboardSidebar />
       </div>
       <div className="w-[82%] md:w-full sm:w-full">

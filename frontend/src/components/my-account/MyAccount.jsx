@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { TiCancel } from "react-icons/ti";
-import { GrStatusGood } from "react-icons/gr";
 
 const MyAccount = () => {
-  const { user } = useAuth();
+  const { user, setError, setMessage } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
-  const [userData, setUserData] = useState({
-    username: "",
-    email: "",
-    address: "",
-    phone: "",
-  });
+  const [userData, setUserData] = useState({ ...user });
 
   const [updatedData, setUpdatedData] = useState({ ...userData });
 
-  const [changesUpdated, setChangesUpdated] = useState(null);
-  const [error, setError] = useState(null);
-
-
-  // Toggle between Edit and View mode
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
   };
@@ -36,28 +24,27 @@ const MyAccount = () => {
 
   return (
     <div className=" p-10 bg-white shadow-md rounded-lg max-w-2xl mx-auto">
-        {changesUpdated && (
-        <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-lilac sm:w-full ">
-          <GrStatusGood className="text-white" />
-          <p>{changesUpdated}</p>
-        </div>
-      )}
-      {error && (
-        <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-red-400 sm:w-full ">
-          <TiCancel className="text-white" />
-          <p>{error}</p>
-        </div>
-      )}
       <h2 className="text-2xl font-semibold mb-4">Your Account</h2>
 
       {isEditing ? (
         <div>
           <div className="mb-4">
-            <label className="block text-gray-700">Display Name</label>
+            <label className="block text-gray-700">Username</label>
             <input
               type="text"
               name="username"
               value={updatedData.username}
+              onChange={handleChange}
+              className="w-full border p-2 rounded mt-1"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700">Full Name</label>
+            <input
+              type="text"
+              name="username"
+              value={updatedData.fullName}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />
@@ -114,10 +101,13 @@ const MyAccount = () => {
         // View Mode
         <div>
           <div className="mb-4">
-            <label className="block text-gray-700">Display Name:</label>
+            <label className="block text-gray-700">Username:</label>
             <p>{userData.username}</p>
           </div>
-
+          <div className="mb-4">
+            <label className="block text-gray-700">Full Name:</label>
+            <p>{userData.fullName}</p>
+          </div>
           <div className="mb-4">
             <label className="block text-gray-700">Email:</label>
             <p>{userData.email}</p>

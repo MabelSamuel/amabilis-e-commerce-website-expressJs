@@ -32,27 +32,30 @@ function Login() {
     const userData = {
       username,
       password,
-      rememberMe
-    }
+      rememberMe,
+    };
     try {
-      const response = await axios.post("http://localhost:7000/api/users/login", userData);
+      const response = await axios.post(
+        "http://localhost:7000/api/users/login",
+        userData
+      );
       const { token, user } = response.data;
-      
+
       if (rememberMe) {
-        localStorage.setItem("authToken", token)
+        localStorage.setItem("authToken", token);
       } else {
-        sessionStorage.setItem("authToken", token)
+        sessionStorage.setItem("authToken", token);
       }
       setIsLoggedIn(true);
       setUser(user);
       setMessage("Login successful");
-      setTimeout(()=> setMessage(""), 3000)
-      navigate("/checkout"); 
+      setTimeout(() => setMessage(""), 3000);
+      navigate("/checkout");
     } catch (error) {
-      setError(error.response.data.message);
-      console.log("Error login in", error);  
+      const errorMessage = error.response?.data?.message || error.message || "An unknown error occurred";
+      setError(errorMessage);
+      console.log("Error login in", error);
     }
-      
 
     // Clear the form fields
     reset({
@@ -67,18 +70,6 @@ function Login() {
       onSubmit={handleSubmit(onSubmit)}
       className=" border h-full w-[70%] shadow-md p-20 md:w-full md:p-20 sm:w-full sm:py-10 sm:px-4 "
     >
-      {loginMessage && (
-        <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-lilac sm:w-full ">
-          <GrStatusGood className="text-white" />
-          <p>{loginMessage}</p>
-        </div>
-      )}
-      {error && (
-        <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-red-400 sm:w-full ">
-          <TiCancel className="text-white" />
-          <p>{error}</p>
-        </div>
-      )}
       <div className=" mb-8 ">
         <Input
           type={"text"}
@@ -116,7 +107,6 @@ function Login() {
       </div>
 
       <Button name={"LOGIN"} />
-      
     </form>
   );
 }

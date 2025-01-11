@@ -41,7 +41,8 @@ function Register() {
           setTimeout(()=> setMessage(""), 3000)
           navigate("/login-register/login")
         } catch (error) {
-          setError(error.response.data.message);
+          const errorMessage = error.response?.data?.message || error.message || "An unknown error occurred";
+          setError(errorMessage);
           console.log("Error registering", error);
         } 
         // clear form after submitting
@@ -60,17 +61,17 @@ function Register() {
                 <p className=' bg-red-500  '>{errors.username.message}</p>
             ) }
         </div>
-        <div className='mb-8 '>
-            <Input type={'password'} placeholder={'Password'} name={'password'} register={register} />
-            { errors.password && (
-                <p className=' bg-red-500  '>{errors.password.message}</p>
-            )}
-        </div>
-        <div>
+        <div  className='mb-8 '>
             <Input type={'email'} placeholder={'Email'} name={'email'} register={register} />
             { errors.email && (
                 <p className=' bg-red-500  '>{errors.email.message }</p>
             ) }
+        </div>
+        <div>
+            <Input type={'password'} placeholder={'Password'} name={'password'} register={register} />
+            { errors.password && (
+                <p className=' bg-red-500  '>{errors.password.message}</p>
+            )}
         </div>
         <Button name={'REGISTER'} />
     </form>

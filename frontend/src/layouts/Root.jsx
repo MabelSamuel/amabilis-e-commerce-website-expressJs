@@ -10,6 +10,8 @@ import { useAuth } from "../context/AuthContext";
 
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
+import Success from "../components/toaster/Success";
+import ErrorMessage from "../components/toaster/ErrorMessage";
 
 import { ScrollToTop } from "../components/scroll-to-top/ScrollToTop";
 
@@ -36,18 +38,8 @@ function Root() {
               <p>{wishListMessage}</p>
             </div>
           )}
-          {message && (
-            <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-lilac sm:w-full ">
-              <GrStatusGood className="text-white" />
-              <p>{message}</p>
-            </div>
-          )}
-          {error && (
-            <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-red-400 sm:w-full ">
-              <TiCancel className="text-white" />
-              <p>{error}</p>
-            </div>
-          )}
+          <Success message={message} />
+          <ErrorMessage errorMessage={error} />
           <Outlet />
         </main>
         <Footer />
