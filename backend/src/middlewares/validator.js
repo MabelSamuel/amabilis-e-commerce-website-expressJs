@@ -35,3 +35,18 @@ export const loginUserSchema = z.object({
   password: z.string().min(8, "Password is required."),
   rememberMe: z.boolean().optional(),
 });
+
+export const contactSchema = z.object({
+  name: z.string().min(3, "Username is required."),
+  email: z
+    .string()
+    .min(6, "Email must be at least 6 characters long.")
+    .max(60, "Email must not exceed 60 characters.")
+    .email("Invalid email format.")
+    .refine(
+      (email) => email.endsWith(".com") || email.endsWith(".net"),
+      "Email domain must be .com or .net"
+    ),
+  subject: z.string().min(5, "Subject must be at least 5 characters long"),
+  message: z.string().min(10, "Message must be at least 10 charcters long"),
+});

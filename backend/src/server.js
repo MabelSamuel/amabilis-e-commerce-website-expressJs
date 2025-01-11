@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import cors from "cors";
 import UserRoutes from "../src/routes/user.js";
-import CartRoute from "../src/routes/cart.js"
+import CartRoute from "../src/routes/cart.js";
+import ContactRoute from "../src/routes/contact.js"
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ connectDB();
 
 app.use('/api/users', UserRoutes);
 app.use('/api/cart', CartRoute);
+app.use('/api', ContactRoute)
 
 const PORT = process.env.PORT || 7001;
 
