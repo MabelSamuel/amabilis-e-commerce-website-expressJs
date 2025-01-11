@@ -37,13 +37,15 @@ function Footer() {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className=" w-full bg-light-gray py-24 px-20 md:h-fit md:px-8 sm:h-fit sm:py-12 sm:px-4 ">
       <div className=" max-w-7xl mx-auto grid grid-cols-5 md:grid-cols-3 md:gap-y-8 sm:grid-cols-1 sm:gap-y-8 ">
         <div className="flex flex-col justify-center md:justify-start">
           <Title />
           <p className="text-gray-500 md:text-sm sm:text-sm sm:mt-2">
-            © 2024 Amabilis.
+            {`© ${currentYear} Amabilis.`}
           </p>
           <p className="text-gray-500 md:text-sm ">All Rights Reserved</p>
         </div>
