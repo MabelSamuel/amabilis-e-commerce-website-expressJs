@@ -13,6 +13,8 @@ import { GrStatusGood } from 'react-icons/gr';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactValidations } from "../../validations/contactValidations";
 
+import { useAuth } from '../../context/AuthContext';
+
 function Contact() {
     const {
         register,
@@ -23,12 +25,12 @@ function Contact() {
         resolver: zodResolver(contactValidations)
     });
 
-    const [contactMessage, setContactMessage] = useState(null);
+    const { setMessage } = useAuth();
 
     const onSubmit = (data) =>{
         console.log(data);
-        setContactMessage("Sent succesfully");
-        setTimeout(() => setContactMessage(""), 3000);
+        setMessage("Sent succesfully");
+        setTimeout(() => setMessage(""), 3000);
 
         // clear input
         reset({
@@ -42,15 +44,9 @@ function Contact() {
 
   return (
     <div className=' flex -mx-1 h-full sm:flex-col sm:h-fit '>
-        {contactMessage && (
-        <div className="fixed top-12 left-1/2 transform -translate-x-1/2 px-4 py-2 w-fit rounded shadow-lg z-[57] flex justify-center items-center gap-2 border-gray-500 text-white bg-lilac sm:w-full ">
-          <GrStatusGood className="text-white" />
-          <p>{contactMessage}</p>
-        </div>
-      )}
         <div className=' px-1 w-[30%] h-full md:pr-4 md:w-2/5 sm:w-full sm:mb-8'>
-            <div className=' rounded-lg bg-gray-200 pt-32 pr-[4.375rem] pb-[7.25rem] pl-[5.525rem] h-full md:px-6 sm:py-16 sm:pl-16 '>
-                <div className='flex center mb-10'>
+            <div className=' rounded-lg bg-gray-200 space-y-10 pt-32 pr-[4.375rem] pb-[7.25rem] pl-[5.525rem] h-full md:px-6 sm:py-16 sm:pl-16 '>
+                <div className='flex center'>
                     <div className=' mr-5 flex items-center '>
                         <PiPhoneCallFill />
                     </div>
@@ -60,7 +56,7 @@ function Contact() {
                     </div>
                 </div>
 
-                <div className='flex center mb-10'>
+                <div className='flex center'>
                     <div className=' mr-5 flex items-center '>
                         <TiWorld />
                     </div>
@@ -70,7 +66,7 @@ function Contact() {
                     </div>
                 </div>
 
-                <div className='flex center mb-10'>
+                <div className='flex center'>
                     <div className=' mr-5 flex items-center '>
                         <MdLocationPin/>
                     </div>
