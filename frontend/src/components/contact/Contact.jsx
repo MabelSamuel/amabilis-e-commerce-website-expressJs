@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactValidations } from "../../validations/contactValidations";
 
 import { useAuth } from "../../context/AuthContext";
+import axios from "axios";
 
 function Contact() {
   const {
@@ -25,20 +26,37 @@ function Contact() {
     resolver: zodResolver(contactValidations),
   });
 
-  const { setMessage } = useAuth();
+  const { setMessage, setError } = useAuth();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setMessage("Sent succesfully");
-    setTimeout(() => setMessage(""), 3000);
-
-    // clear input
-    reset({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+  const onSubmit = async(data) => {
+    const { name, email, subject, message } = data;
+    const userReport = {
+      name,
+      email,
+      subject,
+      message,
+    };
+    try {
+      const response = await axios.post("http://localhost:7000/api/contact", userReport)
+      const { message } = response.data;
+      console.log(response.data);
+      setMessage(message);
+      setTimeout(() => setMessage(""), 3000);
+      // clear input
+      reset({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "An unknown error occurred";
+      setError(errorMessage);
+      console.log(error);
+    }
   };
 
   return (

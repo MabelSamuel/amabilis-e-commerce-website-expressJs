@@ -12,7 +12,7 @@ export const Contact = async (req, res) =>{
             message
         });
 
-        res.status(201).json({ message: "Thank you for contacting us", contactUs })
+        res.status(201).json({ message: "Thank you for contacting us" })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
