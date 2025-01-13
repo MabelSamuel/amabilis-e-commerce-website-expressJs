@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 // react icons
 import { PiPhoneCallFill } from "react-icons/pi";
@@ -8,13 +8,12 @@ import { TiSocialFacebook } from "react-icons/ti";
 import { TiSocialPinterest } from "react-icons/ti";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import { GrStatusGood } from "react-icons/gr";
 // form validations
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactValidations } from "../../validations/contactValidations";
+import axios from "axios";
 
 import { useAuth } from "../../context/AuthContext";
-import axios from "axios";
 
 function Contact() {
   const {
@@ -28,7 +27,7 @@ function Contact() {
 
   const { setMessage, setError } = useAuth();
 
-  const onSubmit = async(data) => {
+  const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
     const userReport = {
       name,
@@ -37,7 +36,10 @@ function Contact() {
       message,
     };
     try {
-      const response = await axios.post("http://localhost:7000/api/contact", userReport)
+      const response = await axios.post(
+        "http://localhost:7000/api/contact",
+        userReport
+      );
       const { message } = response.data;
       console.log(response.data);
       setMessage(message);
