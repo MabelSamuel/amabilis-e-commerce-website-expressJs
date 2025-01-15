@@ -1,41 +1,33 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { v4 } from "uuid";
+import axios from "axios";
 
+import { section } from "../../lib/footer-section";
 import Title from "../company-name/Title";
 import BackToTopButton from "../scroll-to-top-button/BackToTopButton";
+import { subscriptionValidations } from "../../validations/subscriptionValidations";
 
 function Footer() {
-  const section = [
-    {
-      title: "ABOUT US",
-      links: [
-        { title: "About us", url: "/about" },
-        { title: "Store location", url: "#" },
-        { title: "Contact", url: "/contact" },
-        { title: "Orders tracking", url: "#" },
-      ],
-    },
-    {
-      title: "USEFUL LINKS",
-      links: [
-        { title: "Returns", url: "#" },
-        { title: "Support Policy", url: "#" },
-        { title: "Size guide", url: "#" },
-        { title: "FAQs", url: "#" },
-      ],
-    },
-    {
-      title: "FOLLOW US",
-      items: ["Facebook", "Twitter", "Instagram", "Youtube"],
-      links: [
-        { title: "Facebook", url: "https://www.facebook.com" },
-        { title: "Twitter", url: "https://www.twitter.com" },
-        { title: "Instagram", url: "https://www.instagram.com" },
-        { title: "Youtube", url: "https://www.youtube.com" },
-      ],
-    },
-  ];
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(subscriptionValidations)
+  });
+
+  const onSubmit = async(data) =>{
+    const { subscriptionEmail } = data;
+    try {
+      const response = await axios.post("", subscriptionEmail)
+    } catch (error) {
+      
+    }
+  }
 
   const currentYear = new Date().getFullYear();
 
@@ -74,22 +66,24 @@ function Footer() {
             </ul>
           </div>
         ))}
-        <div className=" md:col-span-2 ">
+        <form onSubmit={handleSubmit} className=" md:col-span-2 ">
           <h4 className=" font-medium ">SUBSCRIBE</h4>
           <p className="mt-4 md:text-sm sm:text-sm">
             Get E-mail updates about our latest shop and special offers.
           </p>
           <input
             type="email"
+            name="subscriptionEmail"
             placeholder="Enter your email here..."
             className=" w-full block bg-inherit focus:outline-none py-3 border-b-2 md:text-sm sm:text-sm "
+            { ...register("subscriptionEmail") }
           />
           <input
             type="submit"
             value={"SUBSCRIBE"}
             className="mt-2 border-b-2 border-gray-400 hover:text-lilac hover:border-lilac transition-all duration-300 ease-in-out md:text-sm sm:text-sm "
           />
-        </div>
+        </form>
       </div>
       <BackToTopButton />
     </footer>
