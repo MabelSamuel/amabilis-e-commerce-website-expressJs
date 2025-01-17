@@ -1,64 +1,13 @@
 import React from "react";
-// images
-import manager from "../../assets/manager.jpg";
-import developer from "../../assets/developer.jpg";
-import designer from "../../assets/designer.jpg";
-import chairman from "../../assets/chairman.jpg";
 // custom hooks
 import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
 // icons
 import { IoLogoFacebook } from "react-icons/io5";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaInstagramSquare } from "react-icons/fa";
+import { teamMembers } from "../../lib/about-us";
 
 function TeamMembers() {
-  const members = [
-    {
-      id: 1,
-      image: manager,
-      name: "Mr. Omari Davis",
-      position: "Manager",
-      socialMedia: {
-        facebook: "https://www.facebook.com",
-        twitter: "https://www.twitter.com",
-        instagram: "https://www.instagram.com",
-      },
-    },
-    {
-      id: 2,
-      image: developer,
-      name: "Ms. Nia Thompson",
-      position: "Developer",
-      socialMedia: {
-        facebook: "https://www.facebook.com",
-        twitter: "https://www.twitter.com",
-        instagram: "https://www.instagram.com",
-      },
-    },
-    {
-      id: 3,
-      image: designer,
-      name: "Ms. Kamaria Clark",
-      position: "Designer",
-      socialMedia: {
-        facebook: "https://www.facebook.com",
-        twitter: "https://www.twitter.com",
-        instagram: "https://www.instagram.com",
-      },
-    },
-    {
-      id: 4,
-      image: chairman,
-      name: "Mr. Jabari Harris",
-      position: "Chairman",
-      socialMedia: {
-        facebook: "https://www.facebook.com",
-        twitter: "https://www.twitter.com",
-        instagram: "https://www.instagram.com",
-      },
-    },
-  ];
-
   const { isShow, setIsShow, handleShow } = useDisplayProductIcons();
   return (
     <>
@@ -72,7 +21,7 @@ function TeamMembers() {
         </p>
       </div>
       <div className=" flex gap-6 sm:flex-col ">
-        {members.map((member) => (
+        {teamMembers.map((member) => (
           <div key={member.id} className=" basis-1/4 ">
             <div
               className="h-80 relative sm:h-[30rem]"

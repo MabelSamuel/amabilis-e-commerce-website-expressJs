@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // images
-import jewelry from "../../assets/earrings.jpg";
-import bag from "../../assets/malebag.jpg";
-import tv from "../../assets/tv.jpg";
+import { images } from "../../lib/about-us";
 // key
 import { v4 } from "uuid";
 // icons
@@ -15,20 +13,7 @@ function BannerImages() {
   const handleClick = () => {
     navigate("/collection/grid");
   };
-  const images = [
-    {
-      image: jewelry,
-      title: "Earrings",
-    },
-    {
-      image: bag,
-      title: "School Bags",
-    },
-    {
-      image: tv,
-      title: "Television",
-    },
-  ];
+
   return (
     <div className=" flex mt-20 gap-8 px-3 sm:flex-col ">
       {images.map((img) => (
