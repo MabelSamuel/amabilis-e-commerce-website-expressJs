@@ -1,11 +1,53 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { v4 } from "uuid"
+import { v4 } from "uuid";
 
 import Title from "../company-name/Title";
-import { menuItems } from "../../lib/dashboard/sidebar";
-import { IoLogOutOutline } from "react-icons/io5";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { GrCatalog } from "react-icons/gr";
+import {
+  IoPeopleOutline,
+  IoSettingsOutline,
+  IoLogOutOutline,
+} from "react-icons/io5";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { IoIosStarHalf } from "react-icons/io";
+import { MdStorefront } from "react-icons/md";
 
 const DashboardSidebar = () => {
+  const menuItems = [
+    {
+      label: "Dashboard",
+      icon: <LuLayoutDashboard size="22" />,
+      path: "overview",
+    },
+    {
+      label: "Catalogue",
+      icon: <GrCatalog size="22" />,
+      path: "catalogue",
+    },
+    {
+      label: "Customers",
+      icon: <IoPeopleOutline size="22" />,
+      path: "customers",
+    },
+    {
+      label: "Orders",
+      icon: <HiOutlineShoppingCart size="22" />,
+      path: "orders",
+    },
+    { label: "Reviews", icon: <IoIosStarHalf size="22" />, path: "reviews" },
+    {
+      label: "Settings",
+      icon: <IoSettingsOutline size="22" />,
+      path: "settings",
+    },
+    {
+      label: "Online store",
+      icon: <MdStorefront size="22" />,
+      path: "online-store",
+    },
+  ];
+
   const navigate = useNavigate();
   const onLogout = () => {
     navigate("/admin/login");
@@ -30,7 +72,10 @@ const DashboardSidebar = () => {
             <span>{item.label}</span>
           </NavLink>
         ))}
-        <button onClick={onLogout} className="flex space-x-4 items-center bg-red-500 rounded-md w-full ">
+        <button
+          onClick={onLogout}
+          className="flex space-x-4 items-center bg-red-500 rounded-md w-full "
+        >
           <IoLogOutOutline size="22" /> <span>Logout</span>
         </button>
       </nav>
