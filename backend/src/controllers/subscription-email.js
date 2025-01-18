@@ -5,6 +5,11 @@ export const PostSubscriptionEmail = async(req, res) =>{
     try {
         const { subscriptionEmail } = subscriptionEmailSchema.parse(req.body);
 
+        const existingEmail = await SubscriptionEmail.findOne({ subscriptionEmail });
+        if (existingEmail) {
+            res.status(401).json({ message: "User already subscribed!" })
+        }
+        
         const email = await SubscriptionEmail.Create({
             subscriptionEmail
         })
