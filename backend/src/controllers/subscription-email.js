@@ -1,5 +1,5 @@
-import SubscriptionEmail from "../models/subscription-email";
-import { subscriptionEmailSchema } from "../middlewares/validator";
+import SubscriptionEmail from "../models/subscription-email.js";
+import { subscriptionEmailSchema } from "../middlewares/validator.js";
 
 export const PostSubscriptionEmail = async(req, res) =>{
     try {

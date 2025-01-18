@@ -1,5 +1,5 @@
 import express from "express"
-import { GetSubscriptionEmails, PostSubscriptionEmail } from "../controllers/subscription-email";
+import { GetSubscriptionEmails, PostSubscriptionEmail } from "../controllers/subscription-email.js";
 
 const router = express.Router();
 router.post("/subscribe", PostSubscriptionEmail);
