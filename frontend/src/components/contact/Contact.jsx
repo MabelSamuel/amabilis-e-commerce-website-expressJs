@@ -37,7 +37,7 @@ function Contact() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/contact",
+        "https://amabilis-e-commerce-api.onrender.com/api/contact",
         userReport
       );
       const { message } = response.data;

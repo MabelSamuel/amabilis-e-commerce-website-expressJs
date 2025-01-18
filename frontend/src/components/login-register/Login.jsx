@@ -36,7 +36,7 @@ function Login() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:7000/api/users/login",
+        "https://amabilis-e-commerce-api.onrender.com/api/users/login",
         userData
       );
       const { token, user } = response.data;

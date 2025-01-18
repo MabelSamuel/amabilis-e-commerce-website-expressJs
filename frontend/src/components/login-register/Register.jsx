@@ -34,7 +34,7 @@ function Register() {
           password
         }
         try {
-          const response = await axios.post("http://localhost:7000/api/users/register", user);
+          const response = await axios.post("https://amabilis-e-commerce-api.onrender.com/api/users/register", user);
           console.log("User succefully added", response.data);
           setMessage("Registered successfully")
           setTimeout(()=> setMessage("Please login"), 1000)
