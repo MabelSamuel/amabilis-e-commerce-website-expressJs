@@ -9,25 +9,41 @@ import { section } from "../../lib/footer-section";
 import Title from "../company-name/Title";
 import BackToTopButton from "../scroll-to-top-button/BackToTopButton";
 import { subscriptionValidations } from "../../validations/subscriptionValidations";
+import { useAuth } from "../../context/AuthContext";
 
 function Footer() {
+  const { setMessage, setError } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: zodResolver(subscriptionValidations)
+    resolver: zodResolver(subscriptionValidations),
   });
 
-  const onSubmit = async(data) =>{
+  const onSubmit = async (data) => {
     const { subscriptionEmail } = data;
     try {
-      const response = await axios.post("", subscriptionEmail)
+      const response = await axios.post(
+        "https://amabilis-e-commerce-api.onrender.com/api/subscribe",
+        subscriptionEmail
+      );
+
+      setMessage(response?.data?.message);
+      setTimeout(() => setMessage(""), 300);
+      reset({
+        subscriptionEmail: "",
+      });
     } catch (error) {
-      
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "An unknown error occurred";
+      setError(errorMessage);
+      console.log("Error subscribing", error);
     }
-  }
+  };
 
   const currentYear = new Date().getFullYear();
 
@@ -66,7 +82,7 @@ function Footer() {
             </ul>
           </div>
         ))}
-        <form onSubmit={handleSubmit} className=" md:col-span-2 ">
+        <form onSubmit={handleSubmit(onSubmit)} className=" md:col-span-2 ">
           <h4 className=" font-medium ">SUBSCRIBE</h4>
           <p className="mt-4 md:text-sm sm:text-sm">
             Get E-mail updates about our latest shop and special offers.
@@ -76,7 +92,7 @@ function Footer() {
             name="subscriptionEmail"
             placeholder="Enter your email here..."
             className=" w-full block bg-inherit focus:outline-none py-3 border-b-2 md:text-sm sm:text-sm "
-            { ...register("subscriptionEmail") }
+            {...register("subscriptionEmail")}
           />
           <input
             type="submit"

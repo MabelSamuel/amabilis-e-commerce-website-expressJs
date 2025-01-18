@@ -50,3 +50,15 @@ export const contactSchema = z.object({
   subject: z.string().min(5, "Subject must be at least 5 characters long"),
   message: z.string().min(10, "Message must be at least 10 charcters long"),
 });
+
+export const subscriptionEmailSchema = z.object({
+  email: z
+    .string()
+    .min(6, "Email must be at least 6 characters long.")
+    .max(60, "Email must not exceed 60 characters.")
+    .email("Invalid email format.")
+    .refine(
+      (email) => email.endsWith(".com") || email.endsWith(".net"),
+      "Email domain must be .com or .net"
+    ),
+});

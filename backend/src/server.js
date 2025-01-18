@@ -4,7 +4,8 @@ import connectDB from "./config/db.js";
 import cors from "cors";
 import UserRoutes from "../src/routes/user.js";
 import CartRoute from "../src/routes/cart.js";
-import ContactRoute from "../src/routes/contact.js"
+import ContactRoute from "../src/routes/contact.js";
+import SubscriptionRoute from "../src/routes/subscription-email.js";
 
 dotenv.config()
 
@@ -16,7 +17,8 @@ connectDB();
 
 app.use('/api/users', UserRoutes);
 app.use('/api/cart', CartRoute);
-app.use('/api', ContactRoute)
+app.use('/api', ContactRoute);
+app.use('/api', SubscriptionRoute);
 
 const PORT = process.env.PORT || 7001;
 
