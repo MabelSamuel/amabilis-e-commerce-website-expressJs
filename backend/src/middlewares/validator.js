@@ -52,7 +52,7 @@ export const contactSchema = z.object({
 });
 
 export const subscriptionEmailSchema = z.object({
-  email: z
+  subscriptionEmail: z
     .string()
     .min(6, "Email must be at least 6 characters long.")
     .max(60, "Email must not exceed 60 characters.")

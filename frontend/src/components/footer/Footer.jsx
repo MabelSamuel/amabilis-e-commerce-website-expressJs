@@ -94,11 +94,9 @@ function Footer() {
             className=" w-full block bg-inherit focus:outline-none py-3 border-b-2 md:text-sm sm:text-sm "
             {...register("subscriptionEmail")}
           />
-          <input
-            type="submit"
-            value={"SUBSCRIBE"}
-            className="mt-2 border-b-2 border-gray-400 hover:text-lilac hover:border-lilac transition-all duration-300 ease-in-out md:text-sm sm:text-sm "
-          />
+          <button className="mt-2 border-b-2 border-gray-400 hover:text-lilac hover:border-lilac transition-all duration-300 ease-in-out md:text-sm sm:text-sm ">
+            SUBSCRIBE
+          </button>
         </form>
       </div>
       <BackToTopButton />
