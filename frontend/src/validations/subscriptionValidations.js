@@ -1,6 +1,6 @@
 import { z } from "zod"
 
 export const subscriptionValidations = z.object({
-    email: z.string()
+    subscriptionEmail: z.string()
     .email('Please enter a valid email address')
 })

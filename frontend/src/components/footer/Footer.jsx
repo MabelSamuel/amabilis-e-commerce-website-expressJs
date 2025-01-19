@@ -25,9 +25,9 @@ function Footer() {
   const apiUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
-    const { subscriptionEmail } = data;
-    console.log(subscriptionEmail); 
     try {
+      const { subscriptionEmail } = data;
+      console.log(subscriptionEmail); 
       const response = await axios.post(`${apiUrl}/api/subscribe`, {
         subscriptionEmail,
       });
@@ -97,6 +97,9 @@ function Footer() {
             className=" w-full block bg-inherit focus:outline-none py-3 border-b-2 md:text-sm sm:text-sm "
             {...register("subscriptionEmail")}
           />
+          {errors.subscriptionEmail && (
+          <p className=" bg-red-500  ">{errors.subscriptionEmail.message}</p>
+        )}
           <button className="mt-2 border-b-2 border-gray-400 hover:text-lilac hover:border-lilac transition-all duration-300 ease-in-out md:text-sm sm:text-sm ">
             SUBSCRIBE
           </button>
