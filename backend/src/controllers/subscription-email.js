@@ -9,8 +9,8 @@ export const PostSubscriptionEmail = async(req, res) =>{
         if (existingEmail) {
             res.status(401).json({ message: "User already subscribed!" })
         }
-        
-        const email = await SubscriptionEmail.Create({
+
+        const email = await SubscriptionEmail.create({
             subscriptionEmail
         })
         res.status(201).json({ message: "Subscription successful" })
