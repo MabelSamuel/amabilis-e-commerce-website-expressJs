@@ -26,6 +26,7 @@ function Footer() {
 
   const onSubmit = async (data) => {
     const { subscriptionEmail } = data;
+    console.log(subscriptionEmail); 
     try {
       const response = await axios.post(`${apiUrl}/api/subscribe`, {
         subscriptionEmail,
