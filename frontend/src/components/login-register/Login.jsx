@@ -27,6 +27,7 @@ function Login() {
     resolver: zodResolver(loginValidations),
   });
 
+  const apiUrl = import.meta.env.VITE_API_URL;
   const onSubmit = async (data) => {
     const { username, password, rememberMe } = data;
     const userData = {
@@ -36,7 +37,7 @@ function Login() {
     };
     try {
       const response = await axios.post(
-        "https://amabilis-e-commerce-api.onrender.com/api/users/login",
+        `${apiUrl}/api/users/login`,
         userData
       );
       const { token, user } = response.data;
@@ -54,6 +55,7 @@ function Login() {
     } catch (error) {
       const errorMessage = error.response?.data?.message || error.message || "An unknown error occurred";
       setError(errorMessage);
+      setTimeout(()=> setError(""), 3000)
       console.log("Error login in", error);
     }
 

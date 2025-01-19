@@ -25,6 +25,7 @@ function Register() {
     })
     
     const { setMessage, setError } = useAuth();
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     const onSubmit = async (data) =>{
         const { email, password, username } = data;
@@ -34,7 +35,7 @@ function Register() {
           password
         }
         try {
-          const response = await axios.post("https://amabilis-e-commerce-api.onrender.com/api/users/register", user);
+          const response = await axios.post(`${apiUrl}/api/users/register`, user);
           console.log("User succefully added", response.data);
           setMessage("Registered successfully")
           setTimeout(()=> setMessage("Please login"), 1000)
@@ -43,6 +44,7 @@ function Register() {
         } catch (error) {
           const errorMessage = error.response?.data?.message || error.message || "An unknown error occurred";
           setError(errorMessage);
+          setTimeout(()=> setError(""), 3000)
           console.log("Error registering", error);
         } 
         // clear form after submitting

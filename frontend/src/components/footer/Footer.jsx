@@ -22,13 +22,14 @@ function Footer() {
     resolver: zodResolver(subscriptionValidations),
   });
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const onSubmit = async (data) => {
     const { subscriptionEmail } = data;
     try {
-      const response = await axios.post(
-        "https://amabilis-e-commerce-api.onrender.com/api/subscribe",
-        subscriptionEmail
-      );
+      const response = await axios.post(`${apiUrl}/api/subscribe`, {
+        subscriptionEmail,
+      });
 
       setMessage(response?.data?.message);
       setTimeout(() => setMessage(""), 300);
@@ -41,6 +42,7 @@ function Footer() {
         error.message ||
         "An unknown error occurred";
       setError(errorMessage);
+      setTimeout(() => setError(""), 3000);
       console.log("Error subscribing", error);
     }
   };

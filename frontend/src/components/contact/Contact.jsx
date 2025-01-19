@@ -26,6 +26,7 @@ function Contact() {
   });
 
   const { setMessage, setError } = useAuth();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
     const { name, email, subject, message } = data;
@@ -36,10 +37,7 @@ function Contact() {
       message,
     };
     try {
-      const response = await axios.post(
-        "https://amabilis-e-commerce-api.onrender.com/api/contact",
-        userReport
-      );
+      const response = await axios.post(`${apiUrl}/api/contact`, userReport);
       const { message } = response.data;
       console.log(response.data);
       setMessage(message);
@@ -57,6 +55,7 @@ function Contact() {
         error.message ||
         "An unknown error occurred";
       setError(errorMessage);
+      setTimeout(() => setError(""), 3000);
       console.log(error);
     }
   };
