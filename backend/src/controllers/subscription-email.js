@@ -22,7 +22,7 @@ export const PostSubscriptionEmail = async(req, res) =>{
 
 export const GetSubscriptionEmails = async(req, res) =>{
     try {
-        const emails = SubscriptionEmail.find({});
+        const emails = await SubscriptionEmail.find({});
         res.status(200).json({ emails })
     } catch (error) {
         res.status(400).json({ error: error.message })
