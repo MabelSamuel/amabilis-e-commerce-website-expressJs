@@ -3,6 +3,6 @@ import { GetSubscriptionEmails, PostSubscriptionEmail } from "../controllers/sub
 
 const router = express.Router();
 router.post("/subscribe", PostSubscriptionEmail);
-router.get("/subscribe", GetSubscriptionEmails)
+router.get("/subscribe", GetSubscriptionEmails);
 
 export default router 
