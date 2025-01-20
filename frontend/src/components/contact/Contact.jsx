@@ -154,18 +154,18 @@ function Contact() {
         <div className=" rounded-lg bg-gray-200 py-[3.125rem] px-28 h-full md:px-8 sm:px-4 ">
           <h2 className=" mb-16 text-2xl font-medium sm:mb-8">Get in Touch</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="sm:text-sm">
-            <div className="flex md:flex-col sm:flex-col">
-              <div className={`w-[44%] ${errors.name && " relative"}`}>
+            <div className="flex gap-12 md:flex-col sm:flex-col">
+              <div className={`basis-1/2 ${errors.name && " relative"}`}>
                 <input
                   type="text"
                   name="name"
                   placeholder="Name*"
                   {...register("name")}
-                  className={` bg-transparent  border ${
+                  className={` w-full bg-transparent border ${
                     errors.name
-                      ? "border-red-500 outline-red-500"
+                      ? "border-red-500 outline-red-500 placeholder:text-red-500"
                       : "border-white"
-                  }  h-10 py-1 px-4 mb-8 mr-8 text-black outline-lilac placeholder:text-black md:w-full sm:w-full `}
+                  }  h-10 py-1 px-4 mb-8 text-black outline-lilac placeholder:text-black `}
                 />
                 {errors.name && (
                   <span className="absolute left-1/2 top-1/2 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -173,44 +173,60 @@ function Contact() {
                   </span>
                 )}
               </div>
-              <div className={`w-[45%] ${errors.email && " relative"}`}>
+              <div className={`basis-1/2 ${errors.email && " relative"}`}>
                 <input
                   type="email"
                   name="email"
                   placeholder="Email*"
                   {...register("email")}
-                  className={` bg-transparent border ${
-                    errors.name
-                      ? "border-red-500 outline-red-500"
+                  className={`w-full bg-transparent border ${
+                    errors.email
+                      ? "border-red-500 outline-red-500 placeholder:text-red-500"
                       : "border-white"
-                  } h-10 py-1 px-4 mb-8 ml-8 text-black  outline-lilac placeholder:text-black md:ml-0 md:w-full sm:w-full sm:ml-0 `}
+                  } h-10 py-1 px-4 mb-8 text-black  outline-lilac placeholder:text-black md:ml-0 `}
                 />
                 {errors.email && (
-                  <span className="absolute left-1/2 top-1/2 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
-                  {errors.email.message}
-                </span>
+                  <span className="absolute left-1/2 bottom-0 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
+                    {errors.email.message}
+                  </span>
                 )}
               </div>
             </div>
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject*"
-              {...register("subject")}
-              className=" block mb-8 bg-transparent border border-white py-1 px-4 w-full h-12 outline-lilac placeholder:text-black "
-            />
-            {errors.subject && (
-              <p className="bg-red-500">{errors.subject.message}</p>
-            )}
-            <textarea
-              name="message"
-              placeholder="Your message*"
-              {...register("message")}
-              className=" w-full h-64 bg-transparent border border-white py-1 px-4 outline-lilac placeholder:text-black md:pt-4 sm:pt-4 "
-            ></textarea>
-            {errors.message && (
-              <p className="bg-red-500">{errors.message.message}</p>
-            )}
+            <div className={`${errors.subject && " relative"}`}>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject*"
+                {...register("subject")}
+                className={` block mb-8 bg-transparent border ${
+                  errors.subject
+                    ? "border-red-500 outline-red-500 placeholder:text-red-500"
+                    : "border-white"
+                } py-1 px-4 w-full h-12 outline-lilac placeholder:text-black`}
+              />
+              {errors.subject && (
+                <span className="absolute left-1/2 top-full mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
+                  {errors.subject.message}
+                </span>
+              )}
+            </div>
+            <div className={`${errors.message && " relative"}`}>
+              <textarea
+                name="message"
+                placeholder="Your message*"
+                {...register("message")}
+                className={` w-full h-64 bg-transparent border ${
+                  errors.message
+                    ? "border-red-500 outline-red-500 placeholder:text-red-500"
+                    : "border-white"
+                } py-1 px-4 outline-lilac placeholder:text-black md:pt-4 sm:pt-4 `}
+              ></textarea>
+              {errors.message && (
+                <span className="absolute left-1/2 top-full mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
+                  {errors.message.message}
+                </span>
+              )}
+            </div>
             <button
               type="submit"
               className=" block bg-black text-white w-28 h-8 mt-8 rounded hover:bg-lilac "
