@@ -154,24 +154,44 @@ function Contact() {
         <div className=" rounded-lg bg-gray-200 py-[3.125rem] px-28 h-full md:px-8 sm:px-4 ">
           <h2 className=" mb-16 text-2xl font-medium sm:mb-8">Get in Touch</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="sm:text-sm">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name*"
-              {...register("name")}
-              className=" bg-transparent w-[44%] border border-white h-10 py-1 px-4 mb-8 mr-8 text-black outline-lilac placeholder:text-black md:w-full sm:w-full "
-            />
-            {errors.name && <p className="bg-red-500">{errors.name.message}</p>}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email*"
-              {...register("email")}
-              className=" bg-transparent w-[45%] border border-white h-10 py-1 px-4 mb-8 ml-8 text-black  outline-lilac placeholder:text-black md:ml-0 md:w-full sm:w-full sm:ml-0 "
-            />
-            {errors.email && (
-              <p className="bg-red-500">{errors.email.message}</p>
-            )}
+            <div className="flex md:flex-col sm:flex-col">
+              <div className={`w-[44%] ${errors.name && " relative"}`}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name*"
+                  {...register("name")}
+                  className={` bg-transparent  border ${
+                    errors.name
+                      ? "border-red-500 outline-red-500"
+                      : "border-white"
+                  }  h-10 py-1 px-4 mb-8 mr-8 text-black outline-lilac placeholder:text-black md:w-full sm:w-full `}
+                />
+                {errors.name && (
+                  <span className="absolute left-1/2 top-1/2 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
+                    {errors.name.message}
+                  </span>
+                )}
+              </div>
+              <div className={`w-[45%] ${errors.email && " relative"}`}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  {...register("email")}
+                  className={` bg-transparent border ${
+                    errors.name
+                      ? "border-red-500 outline-red-500"
+                      : "border-white"
+                  } h-10 py-1 px-4 mb-8 ml-8 text-black  outline-lilac placeholder:text-black md:ml-0 md:w-full sm:w-full sm:ml-0 `}
+                />
+                {errors.email && (
+                  <span className="absolute left-1/2 top-1/2 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
+                  {errors.email.message}
+                </span>
+                )}
+              </div>
+            </div>
             <input
               type="text"
               name="subject"
