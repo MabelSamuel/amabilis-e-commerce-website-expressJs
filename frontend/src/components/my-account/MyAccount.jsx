@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
+import axios from "axios";
 
 const MyAccount = () => {
   const { user, setError, setMessage } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({ ...user });
-
-  const [updatedData, setUpdatedData] = useState({ ...userData });
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
@@ -14,13 +14,26 @@ const MyAccount = () => {
 
   // Handle input changes in edit mode
   const handleChange = (e) => {
-    setUpdatedData({
-      ...updatedData,
+    setUserData({
+      ...userData,
       [e.target.name]: e.target.value,
     });
   };
 
-  // Submit updated data to Firestore
+  // Submit updated data to backend
+  const handleSaveChanges = async (updatedData) => {
+    try {
+      const response = await axios.post(`${apiUrl}`, updatedData);
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "An unknown error occurred";
+      setError(errorMessage);
+      setTimeout(() => setError(""), 3000);
+      console.log("Error subscribing", error);
+    }
+  };
 
   return (
     <div className=" p-10 bg-white shadow-md rounded-lg max-w-2xl mx-auto">
@@ -33,7 +46,7 @@ const MyAccount = () => {
             <input
               type="text"
               name="username"
-              value={updatedData.username}
+              value={userData.username}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />
@@ -44,7 +57,7 @@ const MyAccount = () => {
             <input
               type="text"
               name="username"
-              value={updatedData.fullName}
+              value={userData.fullName}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />
@@ -55,7 +68,7 @@ const MyAccount = () => {
             <input
               type="email"
               name="email"
-              value={updatedData.email}
+              value={userData.email}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />
@@ -66,7 +79,7 @@ const MyAccount = () => {
             <input
               type="text"
               name="address"
-              value={updatedData.address}
+              value={userData.address}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />
@@ -77,7 +90,7 @@ const MyAccount = () => {
             <input
               type="number"
               name="phone"
-              value={updatedData.phone}
+              value={userData.phone}
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1"
             />

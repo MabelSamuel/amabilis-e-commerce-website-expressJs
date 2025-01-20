@@ -6,9 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginValidations } from "../../validations/loginValidations";
 import { useAuth } from "../../context/AuthContext";
 
-import { GrStatusGood } from "react-icons/gr";
-import { TiCancel } from "react-icons/ti";
-
 import axios from "axios";
 
 import Button from "./Button";
@@ -49,9 +46,9 @@ function Login() {
       }
       setIsLoggedIn(true);
       setUser(user);
+      navigate("/my-account");
       setMessage("Login successful");
       setTimeout(() => setMessage(""), 3000);
-      navigate("/checkout");
     } catch (error) {
       const errorMessage = error.response?.data?.message || error.message || "An unknown error occurred";
       setError(errorMessage);

@@ -27,13 +27,12 @@ function Footer() {
   const onSubmit = async (data) => {
     try {
       const { subscriptionEmail } = data;
-      console.log(subscriptionEmail); 
       const response = await axios.post(`${apiUrl}/api/subscribe`, {
         subscriptionEmail,
       });
 
       setMessage(response?.data?.message);
-      setTimeout(() => setMessage(""), 300);
+      setTimeout(() => setMessage(""), 3000);
       reset({
         subscriptionEmail: "",
       });

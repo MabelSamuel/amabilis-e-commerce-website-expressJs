@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import {
   registerUserSchema,
   loginUserSchema,
+  myAccountSchema,
 } from "../middlewares/validator.js";
 
 export const RegisterUser = async (req, res) => {
@@ -56,3 +57,12 @@ export const LoginUser = async (req, res) => {
 export const LogOut = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
+
+export const UpdateUserCredentials = async(req, res) =>{
+  try {
+    const { username, email, fullName, address, phone } = myAccountSchema.parse(req.body);
+    
+  } catch (error) {
+    
+  }
+}
