@@ -25,7 +25,7 @@ function Contact() {
     resolver: zodResolver(contactValidations),
   });
 
-  const { setMessage, setError } = useAuth();
+  const { setMessage, setError, isButtonLoading, setIsButtonLoading } = useAuth();
   const apiUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
@@ -154,7 +154,7 @@ function Contact() {
         <div className=" rounded-lg bg-gray-200 py-[3.125rem] px-28 h-full md:px-8 sm:px-4 ">
           <h2 className=" mb-16 text-2xl font-medium sm:mb-8">Get in Touch</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="sm:text-sm">
-            <div className="flex gap-12 md:flex-col sm:flex-col">
+            <div className="flex mb-8 gap-12 md:flex-col md:gap-8 sm:flex-col sm:gap-8">
               <div className={`basis-1/2 ${errors.name && " relative"}`}>
                 <input
                   type="text"
@@ -164,8 +164,8 @@ function Contact() {
                   className={` w-full bg-transparent border ${
                     errors.name
                       ? "border-red-500 outline-red-500 placeholder:text-red-500"
-                      : "border-white"
-                  }  h-10 py-1 px-4 mb-8 text-black outline-lilac placeholder:text-black `}
+                      : "border-gray-400"
+                  }  h-10 py-1 px-4 outline-lilac placeholder:text-gray-500 `}
                 />
                 {errors.name && (
                   <span className="absolute left-1/2 top-1/2 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -182,8 +182,8 @@ function Contact() {
                   className={`w-full bg-transparent border ${
                     errors.email
                       ? "border-red-500 outline-red-500 placeholder:text-red-500"
-                      : "border-white"
-                  } h-10 py-1 px-4 mb-8 text-black  outline-lilac placeholder:text-black md:ml-0 `}
+                      : "border-gray-400"
+                  } h-10 py-1 px-4 outline-lilac placeholder:text-gray-500 md:ml-0 `}
                 />
                 {errors.email && (
                   <span className="absolute left-1/2 bottom-0 mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -201,8 +201,8 @@ function Contact() {
                 className={` block mb-8 bg-transparent border ${
                   errors.subject
                     ? "border-red-500 outline-red-500 placeholder:text-red-500"
-                    : "border-white"
-                } py-1 px-4 w-full h-12 outline-lilac placeholder:text-black`}
+                    : "border-gray-400"
+                } py-1 px-4 w-full h-12 outline-lilac placeholder:text-gray-500`}
               />
               {errors.subject && (
                 <span className="absolute left-1/2 top-full mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -218,8 +218,8 @@ function Contact() {
                 className={` w-full h-64 bg-transparent border ${
                   errors.message
                     ? "border-red-500 outline-red-500 placeholder:text-red-500"
-                    : "border-white"
-                } py-1 px-4 outline-lilac placeholder:text-black md:pt-4 sm:pt-4 `}
+                    : "border-gray-400"
+                } py-1 px-4 outline-lilac placeholder:text-gray-500 md:pt-4 sm:pt-4 `}
               ></textarea>
               {errors.message && (
                 <span className="absolute left-1/2 top-full mt-1 bg-red-500 text-white text-xs rounded py-1 px-2 shadow-lg">
@@ -231,7 +231,6 @@ function Contact() {
               type="submit"
               className=" block bg-black text-white w-28 h-8 mt-8 rounded hover:bg-lilac "
             >
-              {" "}
               SEND
             </button>
           </form>
