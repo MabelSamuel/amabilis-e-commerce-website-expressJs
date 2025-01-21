@@ -14,6 +14,7 @@ import { contactValidations } from "../../validations/contactValidations";
 import axios from "axios";
 
 import { useAuth } from "../../context/AuthContext";
+import Button from "../Button";
 
 function Contact() {
   const {
@@ -25,10 +26,12 @@ function Contact() {
     resolver: zodResolver(contactValidations),
   });
 
-  const { setMessage, setError, isButtonLoading, setIsButtonLoading } = useAuth();
+  const { setMessage, setError, isButtonLoading, setIsButtonLoading } =
+    useAuth();
   const apiUrl = import.meta.env.VITE_API_URL;
 
   const onSubmit = async (data) => {
+    setIsButtonLoading(true);
     const { name, email, subject, message } = data;
     const userReport = {
       name,
@@ -42,6 +45,7 @@ function Contact() {
       console.log(response.data);
       setMessage(message);
       setTimeout(() => setMessage(""), 3000);
+      setIsButtonLoading(false);
       // clear input
       reset({
         name: "",
@@ -50,6 +54,7 @@ function Contact() {
         message: "",
       });
     } catch (error) {
+      setIsButtonLoading(false);
       const errorMessage =
         error.response?.data?.message ||
         error.message ||
@@ -62,7 +67,7 @@ function Contact() {
 
   return (
     <div className=" flex -mx-1 h-full sm:flex-col sm:h-fit ">
-      <div className=" px-1 w-[30%] h-full md:pr-4 md:w-2/5 sm:w-full sm:mb-8">
+      <div className=" px-1 w-[30%] text-gray-600 h-full md:pr-4 md:w-2/5 sm:w-full sm:mb-8">
         <div className=" rounded-lg bg-gray-200 space-y-10 pt-32 pr-[4.375rem] pb-[7.25rem] pl-[5.525rem] h-full md:px-6 sm:py-16 sm:pl-16 ">
           <div className="flex center">
             <div className=" mr-5 flex items-center ">
@@ -94,7 +99,7 @@ function Contact() {
           </div>
 
           <div className=" mt-14 text-center ">
-            <h3 className=" font-medium text-black text-2xl mb-4 ">
+            <h3 className=" font-medium text-2xl mb-4 ">
               Follow us
             </h3>
             <ul className=" flex justify-center ">
@@ -227,12 +232,14 @@ function Contact() {
                 </span>
               )}
             </div>
-            <button
-              type="submit"
-              className=" block bg-black text-white w-28 h-8 mt-8 rounded hover:bg-lilac "
+            <Button
+              classes={
+                "block bg-black text-white w-28 h-8 mt-8 rounded hover:bg-lilac"
+              }
+              isLoading={isButtonLoading}
             >
               SEND
-            </button>
+            </Button>
           </form>
         </div>
       </div>
