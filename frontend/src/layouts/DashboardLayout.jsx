@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-
-import DashboardHeader from "../components/admin/DashboardHeader";
-import DashboardSidebar from "../components/admin/DashboardSidebar";
 import { useState } from "react";
+
+import DashboardHeader from "@/components/admin/DashboardHeader";
+import DashboardSidebar from "@/components/admin/DashboardSidebar";
 
 const DashboardLayout = () => {
   const [ isSidebarVisible, setIsSidebarVisible ] = useState(false);

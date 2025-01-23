@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import axios from 'axios';
-import { AddToCartContext } from './AddToCartContext';
-import { useAuth } from './AuthContext';
+import { AddToCartContext } from '@/context/AddToCartContext';
+import { useAuth } from '@/context/AuthContext';
 
 const SyncCart = () => {
   const { cart, setCart, setCartCount, setCartMessage } = useContext(AddToCartContext);

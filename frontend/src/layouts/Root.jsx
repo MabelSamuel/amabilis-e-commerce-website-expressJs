@@ -4,16 +4,16 @@ import { Outlet } from "react-router-dom";
 import { GrStatusGood } from "react-icons/gr";
 import { TiCancel } from 'react-icons/ti';
 
-import { AddToCartContext } from "../context/AddToCartContext";
-import { WishListContext } from "../context/WishListContext";
-import { useAuth } from "../context/AuthContext";
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { WishListContext } from "@/context/WishListContext";
+import { useAuth } from "@/context/AuthContext";
 
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
-import Success from "../components/toaster/Success";
-import ErrorMessage from "../components/toaster/ErrorMessage";
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
+import Success from "@/components/toaster/Success";
+import ErrorMessage from "@/components/toaster/ErrorMessage";
 
-import { ScrollToTop } from "../components/scroll-to-top/ScrollToTop";
+import { ScrollToTop } from "@/components/scroll-to-top/ScrollToTop";
 
 
 function Root() {

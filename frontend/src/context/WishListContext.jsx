@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { AddToCartContext } from "./AddToCartContext";
+import { AddToCartContext } from "@/context/AddToCartContext";
 
 export const WishListContext = createContext(null);
 

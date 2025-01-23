@@ -1,5 +1,5 @@
 import React from 'react'
-import Collection from '../components/collection/Collection'
+import Collection from '@/components/collection/Collection'
 
 function CollectionPage() {
   return (
