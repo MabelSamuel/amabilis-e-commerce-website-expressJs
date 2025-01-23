@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // images
-import { images } from "../../lib/about-us";
+import { images } from "@/lib/about-us";
 // key
 import { v4 } from "uuid";
 // icons

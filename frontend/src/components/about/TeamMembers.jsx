@@ -1,11 +1,11 @@
 import React from "react";
 // custom hooks
-import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
+import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
 // icons
 import { IoLogoFacebook } from "react-icons/io5";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaInstagramSquare } from "react-icons/fa";
-import { teamMembers } from "../../lib/about-us";
+import { teamMembers } from "@/lib/about-us";
 
 function TeamMembers() {
   const { isShow, setIsShow, handleShow } = useDisplayProductIcons();

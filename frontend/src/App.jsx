@@ -6,32 +6,32 @@ import {
   RouterProvider,
 } from "react-router-dom";
 // layout
-import Root from "./layouts/Root";
-import DashboardLayout from "./layouts/DashboardLayout";
+import Root from "@/layouts/Root";
+import DashboardLayout from "@/layouts/DashboardLayout";
 // pages
-import HomePage from "./pages/HomePage";
-import ContactPage from "./pages/ContactPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import CollectionPage from "./pages/CollectionPage";
-import ProductGrid from "./components/collection/ProductGrid";
-import CartPage from "./pages/CartPage";
-import LoginAndRegisterPage from "./pages/LoginAndRegisterPage";
-import WishListPage from "./pages/WishListPage";
-import ProductList from "./components/collection/ProductList";
-import Login from "./components/login-register/Login";
-import Register from "./components/login-register/Register";
-import AboutPage from "./pages/AboutPage";
-import CheckOutPage from "./pages/CheckOutPage";
-import SearchResultsPage from "./pages/SearchResultsPage";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
-import ProtectedRoute from "./components/checkout/ProtectedRoute";
-import MyAccountPage from "./pages/MyAccountPage";
-import AdminLoginPage from "./pages/AdminLoginPage";
-import DashboardPage from "./pages/DashboardPage";
-import AdminCustomersPage from "./pages/AdminCustomersPage";
-import AdminOrdersPage from "./pages/AdminOrdersPage"
-import AdminOnlineStore from "./pages/AdminOnlineStore";
-import AdminCataloguePage from "./pages/AdminCataloguePage";
+import HomePage from "@/pages/HomePage";
+import ContactPage from "@/pages/ContactPage";
+import NotFoundPage from "@/pages/NotFoundPage";
+import CollectionPage from "@/pages/CollectionPage";
+import ProductGrid from "@/components/collection/ProductGrid";
+import CartPage from "@/pages/CartPage";
+import LoginAndRegisterPage from "@/pages/LoginAndRegisterPage";
+import WishListPage from "@/pages/WishListPage";
+import ProductList from "@/components/collection/ProductList";
+import Login from "@/components/login-register/Login";
+import Register from "@/components/login-register/Register";
+import AboutPage from "@/pages/AboutPage";
+import CheckOutPage from "@/pages/CheckOutPage";
+import SearchResultsPage from "@/pages/SearchResultsPage";
+import ProductDetailsPage from "@/pages/ProductDetailsPage";
+import ProtectedRoute from "@/components/checkout/ProtectedRoute";
+import MyAccountPage from "@/pages/MyAccountPage";
+import AdminLoginPage from "@/pages/AdminLoginPage";
+import DashboardPage from "@/pages/DashboardPage";
+import AdminCustomersPage from "@/pages/AdminCustomersPage";
+import AdminOrdersPage from "@/pages/AdminOrdersPage"
+import AdminOnlineStore from "@/pages/AdminOnlineStore";
+import AdminCataloguePage from "@/pages/AdminCataloguePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

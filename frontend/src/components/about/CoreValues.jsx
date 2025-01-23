@@ -1,6 +1,6 @@
 import React from "react";
 import { v4 } from "uuid";
-import { coreValues } from "../../lib/about-us";
+import { coreValues } from "@/lib/about-us";
 
 function CoreValues() {
   return (

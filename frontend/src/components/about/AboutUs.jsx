@@ -1,7 +1,7 @@
 import React from 'react'
-import CoreValues from './CoreValues'
-import BannerImages from './BannerImages'
-import TeamMembers from './TeamMembers'
+import BannerImages from '@/components/about/BannerImages'
+import CoreValues from '@/components/about/CoreValues'
+import TeamMembers from '@/components/about/TeamMembers'
 
 function AboutUs() {
   return (

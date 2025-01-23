@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutUs from '../components/about/AboutUs'
+import AboutUs from '@/components/about/AboutUs'
 
 const AboutPage = () => {
   return (
