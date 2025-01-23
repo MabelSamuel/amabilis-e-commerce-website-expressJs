@@ -1,9 +1,9 @@
 import React from "react";
 
-import DashboardTitle from "./ui/DashboardTitle";
-import OverviewCard from "./ui/OverviewCard";
-import OverviewRectangleCard from "./ui/OverviewRectangleCard";
-import Table from "../table/Table";
+import DashboardTitle from "@/components/admin/ui/DashboardTitle";
+import OverviewCard from "@/components/admin/ui/OverviewCard";
+import OverviewRectangleCard from "@/components/admin/ui/OverviewRectangleCard";
+import Table from "@/components/table/Table";
 
 import { LuPackage } from "react-icons/lu";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -12,7 +12,7 @@ import { BsTruck } from "react-icons/bs";
 import { GrStatusGood } from "react-icons/gr";
 import { FaRotate } from "react-icons/fa6";
 
-import { columns, data } from "../../lib/dashboard/dashboard-overview";
+import { columns, data } from "@/lib/dashboard/dashboard-overview";
 
 const DashboardOverview = () => {
   const cardItems = [

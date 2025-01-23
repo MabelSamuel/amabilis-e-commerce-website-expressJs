@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 
-import Title from "../company-name/Title";
+import Title from "@/components/company-name/Title";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { GrCatalog } from "react-icons/gr";
 import {

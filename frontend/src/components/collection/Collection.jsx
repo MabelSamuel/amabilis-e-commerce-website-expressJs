@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import SideBar from './SideBar';
-import ProductCollection from './ProductCollection';
+import SideBar from '@/components/collection/SideBar';
+import ProductCollection from '@/components/collection/ProductCollection';
 
-import { useProducts } from '../../hooks/useProducts';
-import useDebounce from '../../hooks/useDebounce';
+import { useProducts } from '@/hooks/useProducts';
+import useDebounce from '@/hooks/useDebounce';
 
 function Collection() {
   const [category, setCategory] = useState("all");

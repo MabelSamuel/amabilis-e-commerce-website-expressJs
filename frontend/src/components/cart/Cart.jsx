@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { AddToCartContext } from "../../context/AddToCartContext";
+import { AddToCartContext } from "@/context/AddToCartContext";
 // hooks
-import { useProducts } from "../../hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 // icons
 import { MdOutlineCancel } from "react-icons/md";
 import { RiShoppingBag2Line } from "react-icons/ri";
 // components
-import CartTotal from "./CartTotal";
-import CartCoupon from "./CartCoupon";
-import CartTax from "./CartTax";
+import CartTotal from "@/components/cart/CartTotal";
+import CartCoupon from "@/components/cart/CartCoupon";
+import CartTax from "@/components/cart/CartTax";
 
 function Cart() {
   const navigate = useNavigate();

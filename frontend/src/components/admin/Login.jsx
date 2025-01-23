@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import Input from "../login-register/Input";
+import Input from "@/components/login-register/Input";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { adminLoginValidations } from "../../validations/adminLoginValidations";
+import { adminLoginValidations } from "@/validations/adminLoginValidations";
 
 const Login = () => {
   const {

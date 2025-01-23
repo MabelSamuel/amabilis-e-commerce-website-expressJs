@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 import { MdOutlineClear } from "react-icons/md";
 
-import DashboardTitle from "./ui/DashboardTitle";
-import Button from "./ui/Button";
-import ExportFilterLayoutCard from "./ui/ExportFilterLayoutCard";
-import ExportButton from "./ui/ExportButton";
-import Input from "./ui/Input";
+import DashboardTitle from "@/components/admin/ui/DashboardTitle";
+import Button from "@/components/admin/ui/Button";
+import ExportFilterLayoutCard from "@/components/admin/ui/ExportFilterLayoutCard";
+import ExportButton from "@/components/admin/ui/ExportButton";
+import Input from "@/components/admin/ui/Input";
 
 const Customers = () => {
   const [isVisible, setIsVisble] = useState(false);

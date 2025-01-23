@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useOutletContext } from "react-router-dom";
 
-import { useProducts } from "../../hooks/useProducts";
-import { AddToCartContext } from "../../context/AddToCartContext";
+import { useProducts } from "@/hooks/useProducts";
+import { AddToCartContext } from "@/context/AddToCartContext";
 
 import { IoStarSharp } from "react-icons/io5";
 

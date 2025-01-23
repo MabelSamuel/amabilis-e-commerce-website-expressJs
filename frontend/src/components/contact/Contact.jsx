@@ -10,11 +10,11 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 // form validations
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactValidations } from "../../validations/contactValidations";
+import { contactValidations } from "@/validations/contactValidations";
 import axios from "axios";
 
-import { useAuth } from "../../context/AuthContext";
-import Button from "../Button";
+import { useAuth } from "@/context/AuthContext";
+import Button from "@/components/Button";
 
 function Contact() {
   const {

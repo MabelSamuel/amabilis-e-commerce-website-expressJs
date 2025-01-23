@@ -2,18 +2,18 @@ import React from "react";
 import { useContext } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 // custom hooks
-import { useProducts } from "../../hooks/useProducts";
-import { useProductModal } from "../../hooks/useProductModal";
+import { useProducts } from "@/hooks/useProducts";
+import { useProductModal } from "@/hooks/useProductModal";
 // react icons
 import { CiHeart } from "react-icons/ci";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { GrFormView } from "react-icons/gr";
 // context
-import { AddToCartContext } from "../../context/AddToCartContext";
-import { WishListContext } from "../../context/WishListContext";
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { WishListContext } from "@/context/WishListContext";
 // utility
-import { shortenLengthOfTitle } from "../../utility/shortenLengthOfTitle";
-import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
+import { shortenLengthOfTitle } from "@/utility/shortenLengthOfTitle";
+import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
 // components
 import ProductModal from "./ProductModal";
 

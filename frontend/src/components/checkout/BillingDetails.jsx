@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { billingDetailsValidation } from '../../validations/billingDetailsValidation';
+import { billingDetailsValidation } from '@/validations/billingDetailsValidation';
 
 const BillingDetails = () => {
     const {

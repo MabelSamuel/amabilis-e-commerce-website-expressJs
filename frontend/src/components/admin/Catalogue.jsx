@@ -1,18 +1,18 @@
 import React from "react";
 
-import DashboardTitle from "./ui/DashboardTitle";
-import ExportFilterLayoutCard from "./ui/ExportFilterLayoutCard";
-import ExportButton from "./ui/ExportButton";
-import Button from "./ui/Button";
-import Input from "./ui/Input";
-import SelectOption from "./ui/SelectOption";
+import DashboardTitle from "@/components/admin/ui/DashboardTitle";
+import ExportFilterLayoutCard from "@/components/admin/ui/ExportFilterLayoutCard";
+import ExportButton from "@/components/admin/ui/ExportButton";
+import Button from "@/components/admin/ui/Button";
+import Input from "@/components/admin/ui/Input";
+import SelectOption from "@/components/admin/ui/SelectOption";
 
 import { GoPlus } from "react-icons/go";
 
-import AddProductModal from "./AddProductModal";
+import AddProductModal from "@/components/admin/AddProductModal";
 
-import { useDashboardModal } from "../../hooks/useDashboardModal";
-import { crochetClothingCategories, crochetPrice } from "../../lib/dashboard/catalogue";
+import { useDashboardModal } from "@/hooks/useDashboardModal";
+import { crochetClothingCategories, crochetPrice } from "@/lib/dashboard/catalogue";
 
 const Catalogue = () => {
   const { isShowDashboardModal, handleDashboardModal, closeDashboardModal } =

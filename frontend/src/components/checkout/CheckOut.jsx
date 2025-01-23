@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import BillingDetails from './BillingDetails';
-import Order from './Order';
+import BillingDetails from '@/components/checkout/BillingDetails';
+import Order from '@/components/checkout/Order';
 
-import { AddToCartContext } from '../../context/AddToCartContext';
+import { AddToCartContext } from '@/context/AddToCartContext';
 
 function CheckOut() {
 const {cart, getTotalPriceForItem, getTotalPriceOfCart} = useContext(AddToCartContext)
