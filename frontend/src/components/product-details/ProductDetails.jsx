@@ -8,14 +8,14 @@ import { FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { GrFormView } from "react-icons/gr";
 
-import { useProducts } from "../../hooks/useProducts";
-import { AddToCartContext } from "../../context/AddToCartContext";
-import { WishListContext } from "../../context/WishListContext";
-import { shortenLengthOfTitleInHomePage } from "../../utility/shortenLengthOfTitle";
-import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
+import { useProducts } from "@/hooks/useProducts";
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { WishListContext } from "@/context/WishListContext";
+import { shortenLengthOfTitleInHomePage } from "@/utility/shortenLengthOfTitle";
+import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
+import { useProductModal } from "@/hooks/useProductModal";
 
-import ProductModal from "../collection/ProductModal";
-import { useProductModal } from "../../hooks/useProductModal";
+import ProductModal from "@/components/collection/ProductModal";
 
 const ProductDetails = () => {
   const { id } = useParams();

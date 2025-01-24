@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import sliderImage from "../../assets/slider-2.webp"
+import sliderImage from "@/assets/slider-2.webp"
 
 function Slider() {
   return (

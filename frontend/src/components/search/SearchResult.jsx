@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
 
-import { useProducts } from "../../hooks/useProducts";
-import { shortenLengthOfTitleInHomePage } from "../../utility/shortenLengthOfTitle";
-import { useDisplayProductIcons } from "../../hooks/useDisplayProductIcons";
-import { useProductModal } from "../../hooks/useProductModal";
+import { useProducts } from "@/hooks/useProducts";
+import { shortenLengthOfTitleInHomePage } from "@/utility/shortenLengthOfTitle";
+import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
+import { useProductModal } from "@/hooks/useProductModal";
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { WishListContext } from "@/context/WishListContext";
 // icons
 import { PiShoppingCartFill } from "react-icons/pi";
 import { GrFormView } from "react-icons/gr";
 import { CiHeart } from "react-icons/ci";
-import { AddToCartContext } from "../../context/AddToCartContext";
-import { WishListContext } from "../../context/WishListContext";
 
-import ProductModal from "../collection/ProductModal";
+import ProductModal from "@/components/collection/ProductModal";
 
 const SearchResult = () => {
   const { products = [], isLoading, error, refetch } = useProducts();

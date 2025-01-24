@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Slider from './Slider';
-import Product from './new arrival/Product';
-import Support from './support/Support';
+import Slider from '@/components/home/Slider';
+import Product from '@/components/home/new arrival/Product';
+import Support from '@/components/home/support/Support';
 
 function Home() {
   return (

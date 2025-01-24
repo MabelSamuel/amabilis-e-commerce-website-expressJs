@@ -6,12 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import axios from "axios";
 
-import { registerValidations } from '../../validations/registerValidations';
+import { registerValidations } from '@/validations/registerValidations';
 
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 
-import Input from './Input';
-import Button from './Button';
+import Input from '@/components/login-register/Input';
+import Button from '@/components/login-register/Button';
 
 function Register() {
     const navigate = useNavigate();

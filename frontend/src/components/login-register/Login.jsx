@@ -3,13 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { loginValidations } from "../../validations/loginValidations";
-import { useAuth } from "../../context/AuthContext";
+import { loginValidations } from "@/validations/loginValidations";
+import { useAuth } from "@/context/AuthContext";
 
 import axios from "axios";
 
-import Button from "./Button";
-import Input from "./Input";
+import Button from "@/components/login-register/Button";
+import Input from "@/components/login-register/Input";
 
 function Login() {
   const navigate = useNavigate();

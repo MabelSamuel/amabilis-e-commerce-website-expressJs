@@ -1,11 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useForm } from "react-hook-form";
 // react icons
 import { PiPhoneCallFill } from "react-icons/pi";
-import { TiSocialYoutube, TiWorld } from "react-icons/ti";
+import { TiSocialYoutube, TiWorld, TiSocialFacebook, TiSocialPinterest } from "react-icons/ti";
 import { MdLocationPin } from "react-icons/md";
-import { TiSocialFacebook } from "react-icons/ti";
-import { TiSocialPinterest } from "react-icons/ti";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 // form validations

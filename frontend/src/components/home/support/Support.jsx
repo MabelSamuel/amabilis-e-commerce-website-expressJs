@@ -1,6 +1,6 @@
 import React from "react";
 
-import SupportLayout from "./SupportLayout";
+import SupportLayout from "@/components/home/support/SupportLayout";
 
 import { Ri24HoursFill } from "react-icons/ri";
 import { TbTruckDelivery } from "react-icons/tb";

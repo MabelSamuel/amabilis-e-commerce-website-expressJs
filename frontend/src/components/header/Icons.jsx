@@ -6,8 +6,8 @@ import { IoIosContact } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { RiShoppingBag2Line } from "react-icons/ri";
 // context
-import { AddToCartContext } from "../../context/AddToCartContext";
-import { useAuth } from "../../context/AuthContext";
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { useAuth } from "@/context/AuthContext";
 
 function Icons() {
   const [isOpen, setIsOpen] = useState(null);

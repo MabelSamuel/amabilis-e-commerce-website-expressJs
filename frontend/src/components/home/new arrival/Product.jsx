@@ -6,18 +6,18 @@ import ProductLayout from "./ProductLayout";
 import NewArrival from "./NewArrival";
 import ProductModal from "../../collection/ProductModal";
 // custom hook
-import { useProducts } from "../../../hooks/useProducts";
-import { useDisplayProductIcons } from "../../../hooks/useDisplayProductIcons";
-import { useProductModal } from "../../../hooks/useProductModal";
+import { useProducts } from "@/hooks/useProducts";
+import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
+import { useProductModal } from "@/hooks/useProductModal";
 // utility
-import { shortenLengthOfTitleInHomePage } from "../../../utility/shortenLengthOfTitle";
+import { shortenLengthOfTitleInHomePage } from "@/utility/shortenLengthOfTitle";
 // icons
 import { PiShoppingCartFill } from "react-icons/pi";
 import { GrFormView } from "react-icons/gr";
 import { CiHeart } from "react-icons/ci";
 // context
-import { AddToCartContext } from "../../../context/AddToCartContext";
-import { WishListContext } from '../../../context/WishListContext'
+import { AddToCartContext } from "@/context/AddToCartContext";
+import { WishListContext } from '@/context/WishListContext'
 
 
 function Product() {

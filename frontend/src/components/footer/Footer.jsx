@@ -5,11 +5,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { v4 } from "uuid";
 import axios from "axios";
 
-import { section } from "../../lib/footer-section";
-import Title from "../company-name/Title";
-import BackToTopButton from "../scroll-to-top-button/BackToTopButton";
-import { subscriptionValidations } from "../../validations/subscriptionValidations";
-import { useAuth } from "../../context/AuthContext";
+import { section } from "@/lib/footer-section";
+import Title from "@/components/company-name/Title";
+import BackToTopButton from "@/components/scroll-to-top-button/BackToTopButton";
+import { subscriptionValidations } from "@/validations/subscriptionValidations";
+import { useAuth } from "@/context/AuthContext";
 
 function Footer() {
   const { setMessage, setError } = useAuth();
