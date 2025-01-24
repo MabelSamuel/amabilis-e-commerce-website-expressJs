@@ -15,7 +15,8 @@ function Icons() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const handleSearchQuery = () => {
+  const handleSearchQuery = (e) => {
+    e.preventDefault()
     if (searchQuery.trim()) {
       navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
     }
@@ -60,7 +61,7 @@ function Icons() {
                 className="border border-gray-300 outline-0 py-1.5 px-6 w-full text-black bg-transparent transition-all duration-400 ease-in-out"
               />
               <button
-                type="submit"
+                type="button"
                 onClick={handleSearchQuery}
                 className="bg-lilac transition-all duration-400 ease-in-out absolute right-0 h-full w-10 pt-1.5 pb-0.5 px-2 text-white"
               >
