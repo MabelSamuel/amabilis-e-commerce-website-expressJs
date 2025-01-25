@@ -44,7 +44,7 @@
 ```bash
 git clone https://github.com/MabelSamuel/amabilis-e-commerce-website-expressJs.git
 cd amabilis
-
+```
 <!-- # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
