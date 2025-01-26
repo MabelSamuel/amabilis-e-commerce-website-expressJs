@@ -9,6 +9,12 @@ import sliderImage from "@/assets/slider-2.webp";
 import SwiperSlideContent from "@/components/home/SwiperSlideContent";
 
 function Slider() {
+  const sliderContent = [
+    { heading: "Male Clothes" },
+    { heading: "Female Clothes" },
+    { heading: "Kid Clothes" },
+    { heading: "Accessories" },
+  ];
   return (
     <Swiper
       spaceBetween={30}
@@ -23,15 +29,14 @@ function Slider() {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      <SwiperSlide>
-        <SwiperSlideContent sliderImage={sliderImage} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperSlideContent sliderImage={sliderImage} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperSlideContent sliderImage={sliderImage} />
-      </SwiperSlide>
+      {sliderContent.map((content) => (
+        <SwiperSlide>
+          <SwiperSlideContent
+            sliderImage={sliderImage}
+            heading={content.heading}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

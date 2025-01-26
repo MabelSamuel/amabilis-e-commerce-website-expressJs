@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-
-const SwiperSlideContent = ({ sliderImage }) => {
+const SwiperSlideContent = ({ sliderImage, heading }) => {
   return (
     <div className="h-800 border relative md:h-[31.5rem] sm:h-[25rem] sm:flex sm:justify-center ">
       <img
@@ -15,7 +14,7 @@ const SwiperSlideContent = ({ sliderImage }) => {
           Stylish
         </h3>
         <h1 className="font-normal text-7xl mb-6 leading-[3.5rem] md:text-6xl sm:text-3xl sm:mb-3 ">
-          Male Clothes
+          {heading}
         </h1>
         <p className="text-lg mb-11">30% off Summer Vacation</p>
         <button
