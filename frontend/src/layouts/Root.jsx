@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 import { GrStatusGood } from "react-icons/gr";
-import { TiCancel } from 'react-icons/ti';
 
 import { AddToCartContext } from "@/context/AddToCartContext";
 import { WishListContext } from "@/context/WishListContext";

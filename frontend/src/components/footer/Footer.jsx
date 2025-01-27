@@ -10,6 +10,7 @@ import Title from "@/components/company-name/Title";
 import BackToTopButton from "@/components/scroll-to-top-button/BackToTopButton";
 import { subscriptionValidations } from "@/validations/subscriptionValidations";
 import { useAuth } from "@/context/AuthContext";
+import { currentYear } from "@/utility/current-year";
 
 function Footer() {
   const { setMessage, setError } = useAuth();
@@ -46,8 +47,6 @@ function Footer() {
       console.log("Error subscribing", error);
     }
   };
-
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className=" w-full bg-light-gray py-24 px-20 md:h-fit md:px-8 sm:h-fit sm:py-12 sm:px-4 ">
