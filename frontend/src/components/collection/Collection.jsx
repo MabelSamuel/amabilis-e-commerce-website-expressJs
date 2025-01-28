@@ -23,7 +23,8 @@ function Collection() {
     setSearch(e.target.value.toLowerCase());
   }
 
-  const handleSearchClear = () =>{
+  const handleSearchClear = (e) =>{
+    e.preventDefault()
     setSearch("")
   }
 
