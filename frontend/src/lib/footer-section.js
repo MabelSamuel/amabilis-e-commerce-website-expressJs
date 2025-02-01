@@ -11,7 +11,7 @@ export const section = [
   {
     title: "USEFUL LINKS",
     links: [
-      { title: "Returns", url: "#" },
+      { title: "Dashboard", url: "admin/login" },
       { title: "Support Policy", url: "#" },
       { title: "Size guide", url: "#" },
       { title: "FAQs", url: "#" },

@@ -30,7 +30,7 @@ function BackToTopButton() {
   return (
     <>
     {backToTopButton && (
-        <button className='fixed bottom-8 right-8 h-10 w-10 bg-lilac flex justify-center items-center rounded-full z-50 ' onClick={scrollUp}><MdKeyboardDoubleArrowUp className='size-5 text-white hover:animate-bounce'/></button>
+        <button className='fixed bottom-8 right-8 h-12 w-12 bg-lilac flex justify-center items-center rounded-full z-50 sm:size-10 ' onClick={scrollUp}><MdKeyboardDoubleArrowUp className='size-5 text-white hover:animate-bounce'/></button>
     )}
     </>
   )

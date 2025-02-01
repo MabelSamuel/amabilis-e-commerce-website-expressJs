@@ -7,10 +7,10 @@ const SwiperSlideContent = ({ sliderImage, heading }) => {
       <img
         src={sliderImage}
         alt="A man posing"
-        className="h-full object-cover object-center -z-50 sm:object-left sm: "
+        className="h-full object-cover object-center -z-50 sm:object-left "
       />
       <div className="z-50 absolute top-60 right-28 text-center md:top-28 sm:top-10 sm:right-auto">
-        <h3 className='font-medium text-2xl relative mb-7 before:content-[""] before:bg-black before:w-20 before:h-[0.125rem] before:absolute before:left-24 before:top-4 after:content-[""] after:bg-black after:w-20 after:h-[0.125rem] after:absolute after:right-24 after:top-4 md:before:left-16 md:after:right-16 sm:mb-4 sm:before:-left-7 sm:after:-right-7 '>
+        <h3 className='font-medium text-2xl mb-7  '>
           Stylish
         </h3>
         <h1 className="font-normal text-7xl mb-6 leading-[3.5rem] md:text-6xl sm:text-3xl sm:mb-3 ">

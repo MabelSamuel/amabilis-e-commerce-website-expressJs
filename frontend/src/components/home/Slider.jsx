@@ -5,16 +5,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-import sliderImage from "@/assets/slider-2.webp";
+import { sliderContent } from "@/lib/home-page";
 import SwiperSlideContent from "@/components/home/SwiperSlideContent";
 
 function Slider() {
-  const sliderContent = [
-    { heading: "Male Clothes" },
-    { heading: "Female Clothes" },
-    { heading: "Kid Clothes" },
-    { heading: "Accessories" },
-  ];
   return (
     <Swiper
       spaceBetween={0}
@@ -32,7 +26,7 @@ function Slider() {
       {sliderContent.map((content) => (
         <SwiperSlide>
           <SwiperSlideContent
-            sliderImage={sliderImage}
+            sliderImage={content.image}
             heading={content.heading}
           />
         </SwiperSlide>
