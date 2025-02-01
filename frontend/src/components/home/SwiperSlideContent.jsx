@@ -19,7 +19,7 @@ const SwiperSlideContent = ({ sliderImage, heading }) => {
         <p className="text-lg mb-11">30% off Summer Vacation</p>
         <button
           type="button"
-          className="border border-solid border-black px-[50px] pt-[16px] pb-[21px] hover:bg-lilac hover:border-none hover:transition-all hover:ease-linear  "
+          className="border border-black px-[50px] py-[16px]  hover:bg-lilac hover:text-white hover:border-none hover:transition-colors hover:ease-linear  "
         >
           {" "}
           <Link to="collection">SHOP NOW</Link>{" "}
