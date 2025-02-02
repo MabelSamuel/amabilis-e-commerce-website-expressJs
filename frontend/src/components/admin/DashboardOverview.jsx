@@ -81,7 +81,7 @@ const DashboardOverview = () => {
   return (
     <div className="space-y-10">
       <DashboardTitle title="Dashboard Overview" />
-      <div className="flex space-x-4 overflow-x-auto">
+      <div className="flex space-x-4 overflow-x-auto ">
         {cardItems.map((item, index) => (
           <OverviewCard
             key={index}

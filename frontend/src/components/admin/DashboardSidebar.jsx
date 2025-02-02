@@ -53,7 +53,7 @@ const DashboardSidebar = ({ stopPropagation }) => {
     navigate("/admin/login");
   };
   return (
-    <div className="bg-lilac h-full px-4 py-4 md:w-[20rem] sm:w-[20rem]" onClick={stopPropagation}>
+    <div className="bg-lilac h-full px-4 py-4 md:w-[20rem] sm:w-[15rem]" onClick={stopPropagation}>
       <div className="text-center">
         <Title />
       </div>
