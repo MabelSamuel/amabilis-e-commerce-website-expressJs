@@ -13,7 +13,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { IoIosStarHalf } from "react-icons/io";
 import { MdStorefront } from "react-icons/md";
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ stopPropagation }) => {
   const menuItems = [
     {
       label: "Dashboard",
@@ -53,7 +53,7 @@ const DashboardSidebar = () => {
     navigate("/admin/login");
   };
   return (
-    <div className="bg-lilac h-full px-4 py-4 md:w-2/5">
+    <div className="bg-lilac h-full px-4 py-4 md:w-[20rem] sm:w-[20rem]" onClick={stopPropagation}>
       <div className="text-center">
         <Title />
       </div>
