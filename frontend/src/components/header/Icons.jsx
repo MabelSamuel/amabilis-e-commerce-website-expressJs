@@ -21,6 +21,7 @@ function Icons() {
       navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
     }
     setSearchQuery("");
+    setIsOpen(null)
   };
 
   const { cartCount } = useContext(AddToCartContext);
