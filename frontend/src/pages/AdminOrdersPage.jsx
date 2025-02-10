@@ -1,6 +1,10 @@
+import Orders from "@/components/admin/Orders"
+
 const AdminOrdersPage = () => {
   return (
-    <div>AdminOrdersPage</div>
+    <>
+    <Orders/>
+    </>
   )
 }
 

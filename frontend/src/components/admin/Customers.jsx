@@ -25,16 +25,10 @@ const Customers = () => {
         <ExportButton />
       </ExportFilterLayoutCard>
       <form className="bg-white rounded-md px-4 h-24 flex items-center space-x-8">
-        <div className="w-1/2 relative">
+        <div className="w-1/2">
           <Input
             placeholder="Search by name/email"
-            onChange={handleVisibility}
           />
-          {isVisible && (
-            <button className="absolute right-4 top-1/4">
-              <MdOutlineClear />
-            </button>
-          )}
         </div>
         <div className="w-1/2 flex gap-x-4">
           <Button bgColor="bg-lilac" text="Filter" className="text-white" />
