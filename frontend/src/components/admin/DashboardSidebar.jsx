@@ -54,7 +54,7 @@ const DashboardSidebar = ({ stopPropagation }) => {
   };
   return (
     <div className="bg-lilac h-full px-4 py-4 md:w-[20rem] sm:w-[15rem]" onClick={stopPropagation}>
-      <div className="text-center">
+      <div className="px-4">
         <Title />
       </div>
       <nav className="mt-6 text-white space-y-3 *:py-2 *:px-4">
@@ -63,8 +63,8 @@ const DashboardSidebar = ({ stopPropagation }) => {
             key={v4()}
             to={item.path}
             className={({ isActive }) =>
-              `flex space-x-4 items-center ${
-                isActive ? "border-white bg-white text-black rounded-md" : ""
+              `flex space-x-4 items-center hover:border-white hover:bg-white hover:text-black hover:rounded-md ${
+                isActive && "border-white bg-white text-black rounded-md" 
               }`
             }
           >
@@ -74,7 +74,7 @@ const DashboardSidebar = ({ stopPropagation }) => {
         ))}
         <button
           onClick={onLogout}
-          className="flex space-x-4 items-center bg-red-500 rounded-md w-full "
+          className="flex space-x-4 items-center bg-red-500 rounded-md w-full hover:bg-red-600 "
         >
           <IoLogOutOutline size="22" /> <span>Logout</span>
         </button>
