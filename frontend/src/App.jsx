@@ -29,9 +29,11 @@ import MyAccountPage from "@/pages/MyAccountPage";
 import AdminLoginPage from "@/pages/AdminLoginPage";
 import DashboardPage from "@/pages/DashboardPage";
 import AdminCustomersPage from "@/pages/AdminCustomersPage";
-import AdminOrdersPage from "@/pages/AdminOrdersPage"
-import AdminOnlineStore from "@/pages/AdminOnlineStore";
+import AdminOrdersPage from "@/pages/AdminOrdersPage";
+import AdminOnlineStorePage from "@/pages/AdminOnlineStorePage";
 import AdminCataloguePage from "@/pages/AdminCataloguePage";
+import AdminReviewsPage from "@/pages/AdminReviewsPage";
+import AdminSettingsPage from "@/pages/AdminSettingsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -79,7 +81,9 @@ const router = createBrowserRouter(
           <Route path="catalogue" element={<AdminCataloguePage/>} />
           <Route path="customers" element={<AdminCustomersPage/>} />
           <Route path="orders" element={<AdminOrdersPage/>} />
-          <Route path="online-store" element={<AdminOnlineStore/>}/>
+          <Route path="reviews" element={<AdminReviewsPage/>} />
+          <Route path="settings" element={<AdminSettingsPage/>} />
+          <Route path="online-store" element={<AdminOnlineStorePage/>}/>
       </Route>
     </>
   )

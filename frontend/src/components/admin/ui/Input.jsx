@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { MdOutlineClear } from "react-icons/md";
 
 const Input = ({ placeholder, className = "" }) => {
@@ -20,13 +20,13 @@ const Input = ({ placeholder, className = "" }) => {
       <input
         type="text"
         placeholder={placeholder}
-        className={`w-full h-12 border border-slate-300 rounded-md px-4 outline-none bg-slate-200 ${className}`}
+        className={`w-full h-12 border border-slate-300 rounded-md px-4 outline-none bg-slate-200 focus:bg-inherit ${className}`}
         onChange={handleVisibility}
       />
       {isVisible && (
         <button className="absolute right-4 top-1/4"
          onClick={handleClearInput}>
-          <MdOutlineClear />
+          <MdOutlineClear className="text-lilac" />
         </button>
       )}
     </div>

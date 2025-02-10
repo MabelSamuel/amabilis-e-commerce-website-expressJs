@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AdminOnlineStore = () => {
+const AdminOnlineStorePage = () => {
   return (
     <div>AdminOnlineStore</div>
   )
 }
 
-export default AdminOnlineStore
+export default AdminOnlineStorePage

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import { MdOutlineClear } from "react-icons/md";
+import React from "react";
 
 import DashboardTitle from "@/components/admin/ui/DashboardTitle";
 import Button from "@/components/admin/ui/Button";
@@ -9,15 +7,6 @@ import ExportButton from "@/components/admin/ui/ExportButton";
 import Input from "@/components/admin/ui/Input";
 
 const Customers = () => {
-  const [isVisible, setIsVisble] = useState(false);
-  const handleVisibility = (e) => {
-    if (e.target.value === "") {
-      setIsVisble(false);
-    } else {
-      setIsVisble(true);
-    }
-  };
-
   return (
     <section className="space-y-6">
       <DashboardTitle title="Customers" />
