@@ -57,14 +57,14 @@ const SearchResult = () => {
     );
   }
   return (
-    <div className="m-6 p-10 shadow-sm border">
+    <div className="my-6 mx-20 py-10 px-9 shadow-sm border">
       <h2 className="font-medium text-2xl">Search Results for "{query}"</h2>
-      <div className="grid grid-cols-5 gap-8 mt-6 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid grid-cols-4 gap-8 mt-6 md:grid-cols-2 sm:grid-cols-1">
         {matchingProducts.length > 0 ? (
           matchingProducts.map((product) => (
             <div
               key={product.id}
-              className="border shadow-md p-2 w-56 h-96 md:h-fit md:w-full sm:h-fit sm:w-full "
+              className="border shadow-md p-2 h-96 md:h-fit md:w-full sm:h-fit sm:w-full "
             >
               <div
                 className="h-3/5 relative shadow-sm md:h-[27rem] sm:h-[27rem] "

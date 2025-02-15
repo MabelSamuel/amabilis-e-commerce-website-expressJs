@@ -118,13 +118,13 @@ function Cart() {
           </div>
           <div className="mt-10 flex justify-between sm:flex-col sm:text-sm">
             <button
-              className="bg-gray-200 rounded-full py-4 px-10 uppercase font-medium hover:bg-lilac sm:mb-4"
+              className="bg-gray-200 rounded-full py-4 px-10 uppercase font-medium hover:bg-lilac hover:text-white sm:mb-4"
               onClick={handleNaviagtion}
             >
               Continue Shopping
             </button>
             <button
-              className="bg-gray-200 rounded-full py-4 px-10 uppercase font-medium hover:bg-lilac"
+              className="bg-gray-200 rounded-full py-4 px-10 uppercase font-medium hover:bg-lilac hover:text-white"
               onClick={clearCart}
             >
               Clear Shopping cart
