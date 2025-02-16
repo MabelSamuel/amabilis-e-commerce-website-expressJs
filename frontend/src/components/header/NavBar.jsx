@@ -46,7 +46,7 @@ function NavBar() {
               className={({ isActive }) =>
                 isActive
                   ? " font-medium text-[0.9375rem] text-lilac "
-                  : " font-medium text-[0.9375rem] text-black "
+                  : " font-medium text-[0.9375rem] text-black hover:text-lilac "
               }
             >
               {nav.title}

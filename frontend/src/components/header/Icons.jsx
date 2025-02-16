@@ -46,7 +46,7 @@ function Icons() {
         {" "}
         <IoIosSearch
           size={25}
-          className="hover:stroke-lilac stroke-1 relative"
+          className="hover:text-lilac relative"
         />
         {isOpen === "search" && (
           <div
@@ -76,7 +76,7 @@ function Icons() {
         {!isLoggedIn ? (
           <IoIosContact
             size={25}
-            className=" hover:stroke-lilac stroke-1 relative "
+            className=" hover:text-lilac relative "
             onClick={() => handleDropDown("contact")}
           />
         ) : (
@@ -118,7 +118,7 @@ function Icons() {
                 <NavLink
                   to="/my-account"
                   className={({ isActive }) =>
-                    isActive ? "text-lilac" : "text-black"
+                    isActive ? "text-lilac" : "text-black hover:text-lilac"
                   }
                 >
                   My Account
@@ -136,7 +136,7 @@ function Icons() {
         <NavLink
           to={"/wishlist"}
           className={({ isActive }) =>
-            isActive ? " text-lilac " : " text-black "
+            isActive ? " text-lilac " : " text-black hover:text-lilac"
           }
         >
           {" "}
@@ -148,7 +148,7 @@ function Icons() {
         <NavLink
           to={"/cart"}
           className={({ isActive }) =>
-            isActive ? " text-lilac " : " text-black "
+            isActive ? " text-lilac " : " text-black hover:text-lilac"
           }
         >
           {" "}
