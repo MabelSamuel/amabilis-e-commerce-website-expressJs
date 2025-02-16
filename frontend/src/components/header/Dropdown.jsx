@@ -24,7 +24,7 @@ function Dropdown() {
   };
 
   return (
-    <div className=" h-14 leading-4 text-sm flex justify-between px-20 text-gray-500 border-b sm:flex-col sm:items-center sm:h-fit sm:py-3 sm:px-4">
+    <div className=" h-14 leading-4 text-sm flex justify-between px-20 text-gray-500 border-b md:px-8 sm:flex-col sm:items-center sm:h-fit sm:py-3 sm:px-4">
       <div className="flex items-center h-full ">
         {languageAndCurrency.map((el, index) => (
           <div key={v4()} className=" relative border-r-2 mr-4 sm:mr-2 ">

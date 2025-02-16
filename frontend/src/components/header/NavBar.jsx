@@ -36,7 +36,7 @@ function NavBar() {
     },
   ];
   return (
-    <header className="flex items-center justify-between px-20 py-7 border-b sticky top-0 z-[51] bg-white md:px-2 sm:px-2 sm:py-4">
+    <header className="flex items-center justify-between px-20 py-7 border-b sticky top-0 z-[51] bg-white md:px-8 sm:px-2 sm:py-4">
       <Title />
       <ul className="flex w-2/5 justify-between md:hidden sm:hidden ">
         {navSection.map((nav) => (
