@@ -14,27 +14,27 @@ const CartTotal = ({ getTotalPriceOfCart, handleNavigationToCheckout }) => {
       >
         <p className="mb-4">Total Shipping</p>
         <div className="flex justify-between">
-          <div>
+          <div className="space-x-2">
             <input type="checkbox" name="standardShipping" />
             <label htmlFor="standardShipping">Standard</label>
           </div>
           <span>$20.00</span>
         </div>
         <div className="flex justify-between">
-          <div>
+          <div className="space-x-2">
             <input type="checkbox" name="expressShipping" />
             <label htmlFor="expressShipping">Express</label>
           </div>
           <span>$30.00</span>
         </div>
       </div>
-      <div className="flex justify-between py-4 text-lilac text-xl">
-        <h2 className=" ">Grand Total</h2>
+      <div className="flex justify-between py-4 text-lilac font-medium text-xl">
+        <h2>Grand Total</h2>
         <p>${getTotalPriceOfCart()}</p>
       </div>
       <button
         onClick={handleNavigationToCheckout}
-        className="uppercase bg-lilac w-full rounded-full py-4 text-white font-medium hover:bg-black"
+        className="uppercase text-sm bg-lilac w-full rounded-full py-4 text-white font-medium hover:bg-black"
       >
         Proceed to checkout
       </button>
