@@ -16,6 +16,7 @@ import { shortenLengthOfTitle } from "@/utility/shortenLengthOfTitle";
 import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
 // components
 import ProductModal from "./ProductModal";
+import Loader from "../toaster/Loader";
 
 function ProductGrid() {
   const filteredProducts = useOutletContext();
@@ -35,9 +36,7 @@ function ProductGrid() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 z-[60] flex justify-center items-center bg-white ">
-        <div className="w-12 h-12 aspect-square rounded-full border-8 border-lilac border-t-transparent animate-spin"></div>
-      </div>
+      <Loader />
     );
   }
 

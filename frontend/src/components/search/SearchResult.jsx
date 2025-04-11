@@ -13,6 +13,7 @@ import { GrFormView } from "react-icons/gr";
 import { CiHeart } from "react-icons/ci";
 
 import ProductModal from "@/components/collection/ProductModal";
+import Loader from "../toaster/Loader";
 
 const SearchResult = () => {
   const { products = [], isLoading, error, refetch } = useProducts();
@@ -34,9 +35,7 @@ const SearchResult = () => {
     : [];
   if (isLoading) {
     return (
-      <div className="fixed inset-0 z-[60] flex justify-center items-center bg-white ">
-        <div className="w-12 h-12 aspect-square rounded-full border-8 border-lilac border-t-transparent animate-spin"></div>
-      </div>
+      <Loader />
     );
   }
 

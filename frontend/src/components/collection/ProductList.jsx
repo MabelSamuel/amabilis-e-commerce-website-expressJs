@@ -5,6 +5,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { AddToCartContext } from "@/context/AddToCartContext";
 
 import { IoStarSharp } from "react-icons/io5";
+import Loader from "../toaster/Loader";
 
 function ProductList() {
   const filteredProducts = useOutletContext();
@@ -14,9 +15,7 @@ function ProductList() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 z-[60] flex justify-center items-center bg-white ">
-        <div className="w-12 h-12 aspect-square rounded-full border-8 border-lilac border-t-transparent animate-spin"></div>
-      </div>
+      <Loader />
     );
   }
 

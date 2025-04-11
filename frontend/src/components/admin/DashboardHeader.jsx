@@ -3,12 +3,18 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegBell } from "react-icons/fa";
 import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const DashboardHeader = ({ toggleSidebarVisibility }) => {
   const [isOpen, setIsOpen] = useState(null);
 
   const handleDropdown = (dropdownName) => {
     setIsOpen((prev) => (prev === dropdownName ? null : dropdownName));
+  };
+
+  const navigate = useNavigate();
+  const onLogout = () => {
+    navigate("/admin/login");
   };
   return (
     <div className="flex items-center justify-between bg-white h-16 py-6 px-6 border-b shadow-sm sticky top-0 z-[51]">
@@ -30,7 +36,7 @@ const DashboardHeader = ({ toggleSidebarVisibility }) => {
             <div className="absolute bg-white shadow-md pt-2 px-3 pb-3 text-left w-32 z-50 transition-all duration-300 ease-in flex items-center top-[4rem] right-0 sm:top-[4.2rem] sm:right-0">
               <ul className="text-sm ml-2 my-2 space-y-2 *:flex *:space-x-1 *:items-center * ">
                 <li className="hover:text-lilac"><IoSettingsOutline/> <span>Edit Profile</span></li>
-                <li className="hover:text-lilac"><IoLogOutOutline/><span>Logout</span></li>
+                <li className="hover:text-lilac" onClick={onLogout}><IoLogOutOutline/><span>Logout</span></li>
               </ul>
             </div>
           )}

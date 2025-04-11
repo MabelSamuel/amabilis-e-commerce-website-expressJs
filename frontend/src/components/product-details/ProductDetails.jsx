@@ -16,6 +16,7 @@ import { useDisplayProductIcons } from "@/hooks/useDisplayProductIcons";
 import { useProductModal } from "@/hooks/useProductModal";
 
 import ProductModal from "@/components/collection/ProductModal";
+import Loader from "../toaster/Loader";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -45,9 +46,7 @@ const ProductDetails = () => {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 z-[60] flex justify-center items-center bg-white ">
-        <div className="w-12 h-12 aspect-square rounded-full border-8 border-lilac border-t-transparent animate-spin"></div>
-      </div>
+      <Loader/>
     );
   }
 
