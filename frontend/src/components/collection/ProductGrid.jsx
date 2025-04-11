@@ -125,6 +125,7 @@ function ProductGrid() {
             </div>
             {isProductModal === items.id && (
               <ProductModal
+                isProductModal={isProductModal}
                 items={items}
                 closeModal={closeProductModal}
                 addToCart={addToCart}

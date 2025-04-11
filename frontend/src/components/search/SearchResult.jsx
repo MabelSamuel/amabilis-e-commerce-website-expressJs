@@ -101,6 +101,7 @@ const SearchResult = () => {
                 )}
                 {isProductModal === product.id && (
                   <ProductModal
+                    isProductModal={isProductModal}
                     items={product}
                     closeModal={closeProductModal}
                     addToCart={addToCart}

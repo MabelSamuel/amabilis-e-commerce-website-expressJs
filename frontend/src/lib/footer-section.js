@@ -3,7 +3,7 @@ export const section = [
     title: "ABOUT US",
     links: [
       { title: "About us", url: "/about" },
-      { title: "Store location", url: "#" },
+      { title: "Store location", url: "/contact" },
       { title: "Contact", url: "/contact" },
       { title: "Orders tracking", url: "#" },
     ],

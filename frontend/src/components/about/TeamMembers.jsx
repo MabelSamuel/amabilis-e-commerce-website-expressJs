@@ -48,7 +48,7 @@ function TeamMembers() {
                 </div>
               )}
             </div>
-            <div className="text-center p-4 bg-gray-500">
+            <div className="text-center p-4 bg-light-gray">
               <p className="font-medium text-xl">{member.name}</p>
               <p className="italic">{member.position}</p>
             </div>

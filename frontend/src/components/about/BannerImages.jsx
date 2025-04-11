@@ -26,7 +26,7 @@ function BannerImages() {
             <p className=" mb-12 md:mb-6 ">
               Starting at <span className=" italic text-yellow-400 ">$100</span>
             </p>
-            <FaRegArrowAltCircleRight onClick={handleClick} className=" size-8 text-yellow-400 hover:text-lilac " />
+            <FaRegArrowAltCircleRight onClick={handleClick} className=" size-8 text-yellow-400 cursor-pointer hover:text-lilac " />
           </div>
         </div>
       ))}

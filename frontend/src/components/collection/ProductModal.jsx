@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { IoMdClose } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { IoStarSharp } from "react-icons/io5";
 
-const ProductModal = ({ items, closeModal, addToCart, addToWishList, decrementItemQuantity, incrementItemQuantity }) => {
+const ProductModal = ({ isProductModal, items, closeModal, addToCart, addToWishList, decrementItemQuantity, incrementItemQuantity }) => {
+
+  useEffect(() => {
+    if (isProductModal) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isProductModal]);
+  
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 z-[53] flex justify-center items-start overflow-y-auto" onClick={closeModal}>
+    <div className="fixed inset-0 bg-black bg-opacity-75 z-[20000] flex justify-center items-start overflow-y-auto" onClick={closeModal}>
       <div className="w-[70%] bg-white rounded-lg my-20 max-h-screen sm:w-full sm:max-h-full overflow-y-auto" onClick={(e)=> e.stopPropagation()}>
         <div className="flex flex-row-reverse border-b-2 p-2">
           <IoMdClose size={27} className="text-dark-gray hover:text-black" onClick={closeModal} />
