@@ -65,7 +65,7 @@ function Contact() {
   };
 
   return (
-    <div className=" flex -mx-1 h-full sm:flex-col sm:h-fit ">
+    <div className="h-[53rem] flex -mx-1 sm:flex-col sm:h-fit ">
       <div className=" px-1 w-[30%] text-gray-600 h-full md:pr-4 md:w-2/5 sm:w-full sm:mb-8">
         <div className=" rounded-lg bg-gray-200 space-y-10 pt-32 pr-[4.375rem] pb-[7.25rem] pl-[5.525rem] h-full md:px-6 sm:py-16 sm:pl-16 ">
           <div className="flex center">
