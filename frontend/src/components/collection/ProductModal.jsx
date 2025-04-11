@@ -22,7 +22,7 @@ const ProductModal = ({ isProductModal, items, closeModal, addToCart, addToWishL
     <div className="fixed inset-0 bg-black bg-opacity-75 z-[20000] flex justify-center items-start overflow-y-auto" onClick={closeModal}>
       <div className="w-[70%] bg-white rounded-lg my-20 max-h-screen sm:w-full sm:max-h-full overflow-y-auto" onClick={(e)=> e.stopPropagation()}>
         <div className="flex flex-row-reverse border-b-2 p-2">
-          <IoMdClose size={27} className="text-dark-gray hover:text-black" onClick={closeModal} />
+          <IoMdClose size={27} className="text-dark-gray cursor-pointer hover:text-black" onClick={closeModal} />
         </div>
         <div className="flex m-2 sm:flex-col">
           <div className="w-2/5 h-96 sm:w-full sm:h-[31rem]">
@@ -57,12 +57,12 @@ const ProductModal = ({ isProductModal, items, closeModal, addToCart, addToWishL
               >
                 Add to Cart
               </button>
-              <div
+              <button
                 className="flex items-center justify-center"
                 onClick={() => addToWishList(items)}
               >
                 <CiHeart className="hover:text-lilac" size={25} />
-              </div>
+              </button>
             </div>
             <div className="mt-4">
               <span>Categories: {items.category}</span>
