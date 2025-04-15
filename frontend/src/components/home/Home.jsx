@@ -6,7 +6,7 @@ import Support from '@/components/home/support/Support';
 
 function Home() {
   return (
-    <div className='h-fit'>
+    <div className='h-fit container mx-auto'>
         <Slider/>
         <Support/>
         <Product/>

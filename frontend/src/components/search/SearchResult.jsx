@@ -56,7 +56,7 @@ const SearchResult = () => {
     );
   }
   return (
-    <div className="my-6 mx-20 py-10 px-9 shadow-sm border">
+    <div className="my-6 py-10 px-9 shadow-sm border container mx-auto">
       <h2 className="font-medium text-2xl">Search Results for "{query}"</h2>
       <div className="grid grid-cols-4 gap-8 mt-6 md:grid-cols-2 sm:grid-cols-1">
         {matchingProducts.length > 0 ? (

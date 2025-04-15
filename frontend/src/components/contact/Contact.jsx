@@ -67,7 +67,7 @@ function Contact() {
   return (
     <div className="h-[53rem] flex -mx-1 sm:flex-col sm:h-fit ">
       <div className=" px-1 w-[30%] text-gray-600 h-full md:pr-4 md:w-2/5 sm:w-full sm:mb-8">
-        <div className=" rounded-lg bg-gray-200 space-y-10 pt-32 pr-[4.375rem] pb-[7.25rem] pl-[5.525rem] h-full md:px-6 sm:py-16 sm:pl-16 ">
+        <div className=" rounded-lg bg-gray-200 space-y-10 pt-32 pr-[2.375rem] pb-[7.25rem] pl-[3.525rem] h-full md:px-6 sm:py-16 sm:pl-16 ">
           <div className="flex center">
             <div className=" mr-5 flex items-center ">
               <PiPhoneCallFill />
@@ -83,12 +83,12 @@ function Contact() {
               <TiWorld />
             </div>
             <div>
-              <p>amabilis@gmail.com</p>
+              <p className="hover:text-lilac"><a href="mailto:amabilis@gmail.com">amabilis@gmail.com</a></p>
               <p>amabiliswebsite.com</p>
             </div>
           </div>
 
-          <div className="flex center">
+          <div className="flex center mr-7">
             <div className=" mr-5 flex items-center ">
               <MdLocationPin />
             </div>

@@ -3,7 +3,7 @@ import NotFound from '@/components/not-found/NotFound';
 
 function NotFoundPage() {
   return (
-    <div className=' p-28 md:p-20 sm:p-4 '>
+    <div className=' p-28 md:p-20 sm:p-4 container mx-auto '>
         <NotFound />
     </div>
   )

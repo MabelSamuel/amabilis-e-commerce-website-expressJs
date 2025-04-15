@@ -11,6 +11,7 @@ import { RiShoppingBag2Line } from "react-icons/ri";
 import CartTotal from "@/components/cart/CartTotal";
 import CartCoupon from "@/components/cart/CartCoupon";
 import CartTax from "@/components/cart/CartTax";
+import Loader from "@/components/toaster/Loader";
 
 function Cart() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Cart() {
   } = useContext(AddToCartContext);
 
   if (isLoading) {
-    return <div>Data is loading</div>;
+    return <Loader/>;
   }
 
   if (error) {

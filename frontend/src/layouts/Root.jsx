@@ -22,7 +22,7 @@ function Root() {
 
   return (
     <ScrollToTop>
-      <div className="min-h-fit max-w-[1440px] mx-auto">
+      <div className="min-h-fit">
         <Header />
         <main>
           {cartMessage && (

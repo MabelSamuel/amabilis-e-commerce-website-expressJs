@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 function LoginAndRegisterPage() {
   return (
-    <section className=" flex flex-col justify-center items-center p-48 md:px-8 md:py-16 sm:px-4 sm:py-16 ">
+    <section className="container mx-auto flex flex-col justify-center items-center py-20 px-48 md:px-8 md:py-16 sm:px-4 sm:py-16 ">
       <div className=" flex mb-10 ">
         <div className=' relative before:absolute before:bg-[hsl(0,100%,3%)] before:content-[""] before:h-5 before:w-[0.0625rem] before:bottom-1 before:-right-[0.125rem] '>
           <NavLink

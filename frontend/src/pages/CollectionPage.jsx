@@ -3,9 +3,9 @@ import Collection from '@/components/collection/Collection'
 
 function CollectionPage() {
   return (
-    <>
-        <Collection/>
-    </>
+    <div className='container mx-auto'>
+      <Collection/>
+    </div>
   )
 }
 

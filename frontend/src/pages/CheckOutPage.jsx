@@ -3,7 +3,7 @@ import CheckOut from '@/components/checkout/CheckOut'
 
 function CheckOutPage() {
   return (
-    <div className=' p-20 md:px-8 sm:p-6 '>
+    <div className='container mx-auto p-20 md:px-8 sm:p-6 '>
         <CheckOut/>
     </div>
   )
