@@ -44,3 +44,47 @@ export const syncCart = async (req, res) => {
       }
     
 }
+
+export const getCart = async (req, res) => {
+  try {
+    const userId = req.userId;
+
+    let cart = await Cart.findOne({user: userId}).populate('items.product');
+    if (!cart) {
+      return res.status(200).json({
+        items: [],
+        total: 0
+      })
+    } 
+
+    let total = 0;
+    const cartItems = cart.items.map((item) => {
+      const price = item.product.price;
+      const itemTotal = item.quantity * price;
+      total += itemTotal
+
+      return {
+        product: item.product,
+        quantity: item.quantity,
+        price,
+        itemTotal
+      }
+    })
+
+    res.json({
+      items: cartItems,
+      total
+    })
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
+export const addToCart = async(req, body) => {
+  try {
+    const userId = req.userId;
+  } catch (error) {
+    
+  }
+}

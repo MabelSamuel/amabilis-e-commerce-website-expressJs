@@ -1,9 +1,13 @@
 import express from 'express';
 import { authMiddleware } from '../middlewares/auth.js';
-import { syncCart } from '../controllers/cart.js'
+import { addToCart, getCart, syncCart } from '../controllers/cart.js'
 
 const router = express.Router();
 
-router.post('/sync', authMiddleware, syncCart);
+router.use(authMiddleware)
+
+router.post('/sync', syncCart);
+router.get('/', getCart);
+router.post('/', addToCart)
 
 export default router;
