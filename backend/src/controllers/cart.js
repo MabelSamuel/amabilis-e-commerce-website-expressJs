@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import Cart from '../models/Cart.js';
+import Product from '../models/Product.js';
 
 export const syncCart = async (req, res) => {
     try {
@@ -48,8 +49,9 @@ export const syncCart = async (req, res) => {
 export const getCart = async (req, res) => {
   try {
     const userId = req.userId;
+    const { page = 1, limit = 10 } = req.query;
+    const cart = await Cart.findOne({user: userId});
 
-    let cart = await Cart.findOne({user: userId}).populate('items.product');
     if (!cart) {
       return res.status(200).json({
         items: [],
@@ -57,14 +59,16 @@ export const getCart = async (req, res) => {
       })
     } 
 
+    const items = await cartItems.find({ cart: cart._id })
+
     let total = 0;
     const cartItems = cart.items.map((item) => {
-      const price = item.product.price;
+      const price = item.productId.price;
       const itemTotal = item.quantity * price;
       total += itemTotal
 
       return {
-        product: item.product,
+        product: item.productId,
         quantity: item.quantity,
         price,
         itemTotal
@@ -81,10 +85,44 @@ export const getCart = async (req, res) => {
   }
 }
 
-export const addToCart = async(req, body) => {
+export const addToCart = async(req, res) => {
   try {
     const userId = req.userId;
+    const { productId, quantity = 1 } = req.body;
+
+    if (!productId) {
+      return res.status(400).json({ message: 'Product ID is required' });
+    }
+
+    const product = await Product.findById(productId)
+    if (!product) {
+      return res.status(400).json({ message: "Product not found!" })
+    }
+
+    let cart = await Cart.findOne({ user: userId })
+    if (!cart) {
+      cart = new Cart({ user: userId, items: [] })
+    }
+
+    const cartItemIndex = cart.items.findIndex(item => item.productId.toString() === productId)
+    if (cartItemIndex > -1) {
+      cart.items[cartItemIndex].quantity += quantity;
+    } else {
+      cart.items.push({ product: productId, quantity })
+    }
+
+    await cart.save();
+    res.status(200).json({ message: "Item added to cart" })
   } catch (error) {
-    
+    res.status(500).json({ message: error.message });
+  }
+}
+
+export const removeItemFromCart = async(req, res) => {
+  try {
+    const userId = req.userId;
+    const { productId } = req.params;
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 }
