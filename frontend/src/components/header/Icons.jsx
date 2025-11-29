@@ -42,7 +42,7 @@ function Icons() {
 
   return (
     <ul className=" flex justify-between w-36 cursor-pointer sm:w-28 ">
-      <li onClick={() => handleDropDown("search")}>
+      <li data-cy="search-trigger" onClick={() => handleDropDown("search")}>
         {" "}
         <IoIosSearch
           size={25}
