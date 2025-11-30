@@ -1,6 +1,6 @@
 describe('Amabilis Homepage', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5173')
+    cy.visit('/')
   })
 
   it('Loads the homepage successfully', () => {
@@ -17,7 +17,7 @@ describe('Amabilis Homepage', () => {
   })
 
   it('Opens the login/register dropdown when user icon is clicked', () => {
-    cy.get('ul > li').eq(1).find('svg').click()
+    cy.get('[data-cy="user-icon"]').click()
 
     cy.contains('Login').should('be.visible')
     cy.contains('Register').should('be.visible')

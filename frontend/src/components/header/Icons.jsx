@@ -75,6 +75,7 @@ function Icons() {
       <li>
         {!isLoggedIn ? (
           <IoIosContact
+            data-cy="user-icon"
             size={25}
             className=" hover:text-lilac relative "
             onClick={() => handleDropDown("contact")}
